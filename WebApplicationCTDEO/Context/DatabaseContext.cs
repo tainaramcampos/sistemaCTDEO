@@ -16,7 +16,16 @@ namespace WebApplicationCTDEO.Context
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Entity<Aluno>()
+            .HasMany(c => c.Turmas)
+            .WithMany(c => c.Alunos)
+            .Map(a => {
+                a.ToTable("AlocacaoAluno");
+                a.MapLeftKey("AlunoId");
+                a.MapRightKey("Turma_Id");
+            });
             base.OnModelCreating(modelBuilder);
+
         }
 
         public DbSet<Aluno> Alunos { get; set; }
@@ -24,6 +33,7 @@ namespace WebApplicationCTDEO.Context
         public DbSet<AlunoSocial> AlunoSocial { get; set; }
         public DbSet<Responsavel> Pais { get; set; }
         public DbSet<Turma> Turmas { get; set; }
+        public DbSet<Modalidade> Modalidade { get; set; }
 
     }
 }

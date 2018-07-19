@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,7 @@ namespace WebApplicationCTDEO.Models
         public int ModalidadeId { get; set; }
         [ForeignKey("ModalidadeId")]
         public Modalidade Modalidade { get; set; }
+        public ICollection<Aluno> Alunos { get; set; }
         public DiadaSemana Dias { get; set; }
         public DateTime Horario { get; set; }
     }
@@ -26,7 +28,7 @@ namespace WebApplicationCTDEO.Models
         Sabado = 5,
         Domingo = 6
     }
-
+    
     public class Modalidade
     {
         public int ModalidadeId { get; set; }

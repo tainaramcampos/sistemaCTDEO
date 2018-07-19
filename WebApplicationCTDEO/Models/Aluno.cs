@@ -14,9 +14,8 @@ namespace WebApplicationCTDEO.Models
         public Sexo Genero { get; set; }
         public DateTime DatadeNascimento { get; set; }
         public Projetos Procedencia { get; set; }
-        [ForeignKey("TurmaId")]
-        public virtual ICollection<Turma> Turma { get; set; }
-        public ICollection<int> TurmaId { get; set; }
+        public ICollection<Turma> Turmas { get; set; }
+        public int TurmaId { get; set; }
         public string CPF { get; set; }
         public string RG { get; set; }
         public string OrgaoExp { get; set; }

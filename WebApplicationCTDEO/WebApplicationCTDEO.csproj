@@ -129,9 +129,21 @@
     <Compile Include="Migrations\201807182124349_Initial.Designer.cs">
       <DependentUpon>201807182124349_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807191536440_AlteracaoTurma.cs" />
-    <Compile Include="Migrations\201807191536440_AlteracaoTurma.Designer.cs">
-      <DependentUpon>201807191536440_AlteracaoTurma.cs</DependentUpon>
+    <Compile Include="Migrations\201807191654322_Correcao_de_Chave_Estrangeira_na_Turma.cs" />
+    <Compile Include="Migrations\201807191654322_Correcao_de_Chave_Estrangeira_na_Turma.Designer.cs">
+      <DependentUpon>201807191654322_Correcao_de_Chave_Estrangeira_na_Turma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807191718272_Adicao_de_AlocacaodeAluno.cs" />
+    <Compile Include="Migrations\201807191718272_Adicao_de_AlocacaodeAluno.Designer.cs">
+      <DependentUpon>201807191718272_Adicao_de_AlocacaodeAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807191723471_Adicao_de_AlocacaodeAluno1.cs" />
+    <Compile Include="Migrations\201807191723471_Adicao_de_AlocacaodeAluno1.Designer.cs">
+      <DependentUpon>201807191723471_Adicao_de_AlocacaodeAluno1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807191746331_Relacionamento_Aluno_Turma.cs" />
+    <Compile Include="Migrations\201807191746331_Relacionamento_Aluno_Turma.Designer.cs">
+      <DependentUpon>201807191746331_Relacionamento_Aluno_Turma.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
@@ -164,8 +176,17 @@
     <EmbeddedResource Include="Migrations\201807182124349_Initial.resx">
       <DependentUpon>201807182124349_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807191536440_AlteracaoTurma.resx">
-      <DependentUpon>201807191536440_AlteracaoTurma.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807191654322_Correcao_de_Chave_Estrangeira_na_Turma.resx">
+      <DependentUpon>201807191654322_Correcao_de_Chave_Estrangeira_na_Turma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807191718272_Adicao_de_AlocacaodeAluno.resx">
+      <DependentUpon>201807191718272_Adicao_de_AlocacaodeAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807191723471_Adicao_de_AlocacaodeAluno1.resx">
+      <DependentUpon>201807191723471_Adicao_de_AlocacaodeAluno1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807191746331_Relacionamento_Aluno_Turma.resx">
+      <DependentUpon>201807191746331_Relacionamento_Aluno_Turma.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
