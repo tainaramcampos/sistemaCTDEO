@@ -1,0 +1,219 @@
+﻿@model IEnumerable<WebApplicationCTDEO.Models.Aluno>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Mae.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pai.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatadeNascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Procedencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CPF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrgaoExp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatadeExp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Complemento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Municipio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comunidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CEP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelefoneResidencial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Celular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EscolhaResponsavel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GraudeParentesco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelefonesResponsavel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstituicaodeEnsino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RededeEnsino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BolsadeEstudos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipodeInstituicao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Serie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Turno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Transporte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistroFed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipodeBolsaAtleta)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mae.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pai.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatadeNascimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Procedencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CPF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrgaoExp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatadeExp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Complemento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bairro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Municipio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comunidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CEP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelefoneResidencial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Celular)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EscolhaResponsavel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GraudeParentesco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelefonesResponsavel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InstituicaodeEnsino)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RededeEnsino)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BolsadeEstudos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipodeInstituicao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Serie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Turno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Transporte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegistroFed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipodeBolsaAtleta)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AlunoId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AlunoId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AlunoId })
+        </td>
+    </tr>
+}
+
+</table>

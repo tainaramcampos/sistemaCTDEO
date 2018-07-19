@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
@@ -13,9 +14,9 @@ namespace WebApplicationCTDEO.Models
         public Sexo Genero { get; set; }
         public DateTime DatadeNascimento { get; set; }
         public Projetos Procedencia { get; set; }
-        public virtual List<Turma> Turma { get; set; }
         [ForeignKey("TurmaId")]
-        public List<int> TurmaId { get; set; }
+        public virtual ICollection<Turma> Turma { get; set; }
+        public ICollection<int> TurmaId { get; set; }
         public string CPF { get; set; }
         public string RG { get; set; }
         public string OrgaoExp { get; set; }
@@ -29,9 +30,14 @@ namespace WebApplicationCTDEO.Models
         public string CEP { get; set; }
         public string TelefoneResidencial { get; set; }
         public string Celular { get; set; }
-        public string CPFdaMae { get; set; }
-        public string CPFdoPai { get; set; }
-        public Responsavel EscolhaResponsavel { get; set; }
+        public string MaeCPF { get; set; }
+        [ForeignKey("MaeCPF")]
+        public virtual Responsavel Mae { get; set; }
+        public string PaiCPF { get; set; }
+        [ForeignKey("PaiCPF")]
+        public Responsavel Pai { get; set; }
+        public TipoResponsavel EscolhaResponsavel { get; set; }
+        public string NomeResponsavel { get; set; }
         public string GraudeParentesco { get; set; }
         public string TelefonesResponsavel { get; set; }
         public string InstituicaodeEnsino { get; set; }
@@ -74,16 +80,17 @@ namespace WebApplicationCTDEO.Models
     }
     public enum Projetos
     {
-        BonsFrutos, PRCC, CRAS, CRE, Outros
+        BonsFrutos, PRCC, CRAS, CRE
     }
-    public enum Responsavel
+    public enum TipoResponsavel
     {
         Mae, Pai, Outro
     }
     
     public class AlunoSocial
     {
-
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.None)]
     public int AlunoId { get; set; }
     [ForeignKey("AlunoId")]
     public virtual Aluno Aluno { get; set; }
@@ -127,6 +134,11 @@ namespace WebApplicationCTDEO.Models
 
     public class Familiares
     {
+        [Key]
+        public int FamiliarId { get; set; }
+        public int AlunoSocialId { get; set; }
+        [ForeignKey("AlunoSocialId")]
+        public virtual AlunoSocial Aluno { get; set; }
         public string Nome { get; set; }
         public int Idade { get; set; }
         public string Vinculo { get; set; }

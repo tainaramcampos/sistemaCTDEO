@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Collections.Generic;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
 namespace WebApplicationCTDEO.Models
 {
-    public class Pais
+    public class Responsavel
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
