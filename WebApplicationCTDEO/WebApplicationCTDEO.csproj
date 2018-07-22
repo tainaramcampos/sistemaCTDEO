@@ -145,6 +145,18 @@
     <Compile Include="Migrations\201807191746331_Relacionamento_Aluno_Turma.Designer.cs">
       <DependentUpon>201807191746331_Relacionamento_Aluno_Turma.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807191936193_Exclusao_de_tabelas.cs" />
+    <Compile Include="Migrations\201807191936193_Exclusao_de_tabelas.Designer.cs">
+      <DependentUpon>201807191936193_Exclusao_de_tabelas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807221207322_Alteracao_Responsavel.cs" />
+    <Compile Include="Migrations\201807221207322_Alteracao_Responsavel.Designer.cs">
+      <DependentUpon>201807221207322_Alteracao_Responsavel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807221230051_Alteracao_TurmaId.cs" />
+    <Compile Include="Migrations\201807221230051_Alteracao_TurmaId.Designer.cs">
+      <DependentUpon>201807221230051_Alteracao_TurmaId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Responsavel.cs" />
@@ -187,6 +199,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807191746331_Relacionamento_Aluno_Turma.resx">
       <DependentUpon>201807191746331_Relacionamento_Aluno_Turma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807191936193_Exclusao_de_tabelas.resx">
+      <DependentUpon>201807191936193_Exclusao_de_tabelas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807221207322_Alteracao_Responsavel.resx">
+      <DependentUpon>201807221207322_Alteracao_Responsavel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807221230051_Alteracao_TurmaId.resx">
+      <DependentUpon>201807221230051_Alteracao_TurmaId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -16,6 +16,7 @@ namespace WebApplicationCTDEO.Context
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            //adicionando a relação entre aluno e turma
             modelBuilder.Entity<Aluno>()
             .HasMany(c => c.Turmas)
             .WithMany(c => c.Alunos)
@@ -24,6 +25,7 @@ namespace WebApplicationCTDEO.Context
                 a.MapLeftKey("AlunoId");
                 a.MapRightKey("Turma_Id");
             });
+
             base.OnModelCreating(modelBuilder);
 
         }

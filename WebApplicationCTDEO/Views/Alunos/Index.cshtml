@@ -18,6 +18,9 @@
             @Html.DisplayNameFor(model => model.Pai.Nome)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Reponsavel.Nome)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Nome)
         </th>
         <th>
@@ -72,12 +75,6 @@
             @Html.DisplayNameFor(model => model.EscolhaResponsavel)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GraudeParentesco)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TelefonesResponsavel)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.InstituicaodeEnsino)
         </th>
         <th>
@@ -117,6 +114,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Pai.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reponsavel.Nome)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Nome)
@@ -171,12 +171,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.EscolhaResponsavel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GraudeParentesco)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TelefonesResponsavel)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.InstituicaodeEnsino)

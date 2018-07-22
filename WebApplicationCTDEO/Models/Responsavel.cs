@@ -12,5 +12,7 @@ namespace WebApplicationCTDEO.Models
         public string Nome { get; set; }
         public string Profissao { get; set; }
         public List<string> Telefones { get; set; }
+        public string GraudeParentesco { get; set; }
+        public string TelefonesResponsavel { get; set; }
     }
 }

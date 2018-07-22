@@ -10,19 +10,24 @@ namespace WebApplicationCTDEO.Models
     public class Aluno
     {
         public int AlunoId { get; set; }
+        [Required]
         public string Nome { get; set; }
+        [Required]
         public Sexo Genero { get; set; }
+        [DataType(DataType.Date)]
+        [Required]
         public DateTime DatadeNascimento { get; set; }
         public Projetos Procedencia { get; set; }
         public ICollection<Turma> Turmas { get; set; }
-        public int TurmaId { get; set; }
         public string CPF { get; set; }
         public string RG { get; set; }
         public string OrgaoExp { get; set; }
         public DateTime DatadeExp { get; set; }
+        [Required]
         public string Endereco { get; set; }
         public int Numero { get; set; }
         public string Complemento { get; set; }
+        [Required]
         public string Bairro { get; set; }
         public string Municipio { get; set; }
         public string Comunidade { get; set; }
@@ -35,10 +40,12 @@ namespace WebApplicationCTDEO.Models
         public string PaiCPF { get; set; }
         [ForeignKey("PaiCPF")]
         public Responsavel Pai { get; set; }
+        [Required]
         public TipoResponsavel EscolhaResponsavel { get; set; }
-        public string NomeResponsavel { get; set; }
-        public string GraudeParentesco { get; set; }
-        public string TelefonesResponsavel { get; set; }
+        //caso o responsável não seja pai ou mãe, preencha os seguintes dados de responsavel
+        public string RespCPF { get; set; }
+        [ForeignKey("RespCPF")]
+        public virtual Responsavel Reponsavel { get; set; }
         public string InstituicaodeEnsino { get; set; }
         public Instituicao RededeEnsino { get; set; }
         public string CRE { get; set; }

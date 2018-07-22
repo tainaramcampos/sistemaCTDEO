@@ -18,7 +18,7 @@ namespace WebApplicationCTDEO.Controllers
         // GET: Alunos
         public ActionResult Index()
         {
-            var alunos = db.Alunos.Include(a => a.Mae).Include(a => a.Pai);
+            var alunos = db.Alunos.Include(a => a.Mae).Include(a => a.Pai).Include(a => a.Reponsavel);
             return View(alunos.ToList());
         }
 
@@ -42,6 +42,8 @@ namespace WebApplicationCTDEO.Controllers
         {
             ViewBag.MaeCPF = new SelectList(db.Pais, "CPF", "Nome");
             ViewBag.PaiCPF = new SelectList(db.Pais, "CPF", "Nome");
+            ViewBag.RespCPF = new SelectList(db.Pais, "CPF", "Nome");
+            ViewBag.Turmas = new SelectList(db.Turmas, "TurmaId", "Nome");
             return View();
         }
 
@@ -50,7 +52,7 @@ namespace WebApplicationCTDEO.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AlunoId,Nome,Genero,DatadeNascimento,Procedencia,CPF,RG,OrgaoExp,DatadeExp,Endereco,Numero,Complemento,Bairro,Municipio,Comunidade,CEP,TelefoneResidencial,Celular,MaeCPF,PaiCPF,EscolhaResponsavel,GraudeParentesco,TelefonesResponsavel,InstituicaodeEnsino,RededeEnsino,CRE,BolsadeEstudos,TipodeInstituicao,Serie,Turno,Transporte,RegistroFed,TipodeBolsaAtleta")] Aluno aluno)
+        public ActionResult Create([Bind(Include = "AlunoId,Nome,Genero,DatadeNascimento,Procedencia,CPF,RG,OrgaoExp,DatadeExp,Endereco,Numero,Complemento,Bairro,Municipio,Comunidade,CEP,TelefoneResidencial,Celular,MaeCPF,PaiCPF,EscolhaResponsavel,RespCPF,InstituicaodeEnsino,RededeEnsino,CRE,BolsadeEstudos,TipodeInstituicao,Serie,Turno,Transporte,RegistroFed,TipodeBolsaAtleta")] Aluno aluno)
         {
             if (ModelState.IsValid)
             {
@@ -61,6 +63,7 @@ namespace WebApplicationCTDEO.Controllers
 
             ViewBag.MaeCPF = new SelectList(db.Pais, "CPF", "Nome", aluno.MaeCPF);
             ViewBag.PaiCPF = new SelectList(db.Pais, "CPF", "Nome", aluno.PaiCPF);
+            ViewBag.RespCPF = new SelectList(db.Pais, "CPF", "Nome", aluno.RespCPF);
             return View(aluno);
         }
 
@@ -78,6 +81,7 @@ namespace WebApplicationCTDEO.Controllers
             }
             ViewBag.MaeCPF = new SelectList(db.Pais, "CPF", "Nome", aluno.MaeCPF);
             ViewBag.PaiCPF = new SelectList(db.Pais, "CPF", "Nome", aluno.PaiCPF);
+            ViewBag.RespCPF = new SelectList(db.Pais, "CPF", "Nome", aluno.RespCPF);
             return View(aluno);
         }
 
@@ -86,7 +90,7 @@ namespace WebApplicationCTDEO.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AlunoId,Nome,Genero,DatadeNascimento,Procedencia,CPF,RG,OrgaoExp,DatadeExp,Endereco,Numero,Complemento,Bairro,Municipio,Comunidade,CEP,TelefoneResidencial,Celular,MaeCPF,PaiCPF,EscolhaResponsavel,GraudeParentesco,TelefonesResponsavel,InstituicaodeEnsino,RededeEnsino,CRE,BolsadeEstudos,TipodeInstituicao,Serie,Turno,Transporte,RegistroFed,TipodeBolsaAtleta")] Aluno aluno)
+        public ActionResult Edit([Bind(Include = "AlunoId,Nome,Genero,DatadeNascimento,Procedencia,CPF,RG,OrgaoExp,DatadeExp,Endereco,Numero,Complemento,Bairro,Municipio,Comunidade,CEP,TelefoneResidencial,Celular,MaeCPF,PaiCPF,EscolhaResponsavel,RespCPF,InstituicaodeEnsino,RededeEnsino,CRE,BolsadeEstudos,TipodeInstituicao,Serie,Turno,Transporte,RegistroFed,TipodeBolsaAtleta")] Aluno aluno)
         {
             if (ModelState.IsValid)
             {
@@ -96,6 +100,7 @@ namespace WebApplicationCTDEO.Controllers
             }
             ViewBag.MaeCPF = new SelectList(db.Pais, "CPF", "Nome", aluno.MaeCPF);
             ViewBag.PaiCPF = new SelectList(db.Pais, "CPF", "Nome", aluno.PaiCPF);
+            ViewBag.RespCPF = new SelectList(db.Pais, "CPF", "Nome", aluno.RespCPF);
             return View(aluno);
         }
 

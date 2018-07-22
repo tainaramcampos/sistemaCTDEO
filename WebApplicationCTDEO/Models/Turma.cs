@@ -10,6 +10,7 @@ namespace WebApplicationCTDEO.Models
     public class Turma
     {
         public int TurmaId { get; set; }
+        public string Nome { get; set; }
         public int ModalidadeId { get; set; }
         [ForeignKey("ModalidadeId")]
         public Modalidade Modalidade { get; set; }
