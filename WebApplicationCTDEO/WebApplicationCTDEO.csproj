@@ -157,9 +157,13 @@
     <Compile Include="Migrations\201807221230051_Alteracao_TurmaId.Designer.cs">
       <DependentUpon>201807221230051_Alteracao_TurmaId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807221925324_Adicao_Tabela_Responsavel.cs" />
+    <Compile Include="Migrations\201807221925324_Adicao_Tabela_Responsavel.Designer.cs">
+      <DependentUpon>201807221925324_Adicao_Tabela_Responsavel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
-    <Compile Include="Models\Responsavel.cs" />
+    <Compile Include="Models\Familiar.cs" />
     <Compile Include="Models\Turma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -168,12 +172,14 @@
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Alunos\Create.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Alunos\Delete.cshtml" />
     <Content Include="Views\Alunos\Details.cshtml" />
     <Content Include="Views\Alunos\Edit.cshtml" />
     <Content Include="Views\Alunos\Index.cshtml" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Alunos\Cadastrar.cshtml" />
+    <Content Include="Views\Alunos\CreateStudent.cshtml" />
+    <Content Include="Views\Alunos\CreateFamiliar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807221230051_Alteracao_TurmaId.resx">
       <DependentUpon>201807221230051_Alteracao_TurmaId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807221925324_Adicao_Tabela_Responsavel.resx">
+      <DependentUpon>201807221925324_Adicao_Tabela_Responsavel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

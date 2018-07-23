@@ -34,18 +34,7 @@ namespace WebApplicationCTDEO.Models
         public string CEP { get; set; }
         public string TelefoneResidencial { get; set; }
         public string Celular { get; set; }
-        public string MaeCPF { get; set; }
-        [ForeignKey("MaeCPF")]
-        public virtual Responsavel Mae { get; set; }
-        public string PaiCPF { get; set; }
-        [ForeignKey("PaiCPF")]
-        public Responsavel Pai { get; set; }
-        [Required]
-        public TipoResponsavel EscolhaResponsavel { get; set; }
-        //caso o responsável não seja pai ou mãe, preencha os seguintes dados de responsavel
-        public string RespCPF { get; set; }
-        [ForeignKey("RespCPF")]
-        public virtual Responsavel Reponsavel { get; set; }
+        public ICollection<Familiar> Familiar { get; set; }
         public string InstituicaodeEnsino { get; set; }
         public Instituicao RededeEnsino { get; set; }
         public string CRE { get; set; }
@@ -103,7 +92,7 @@ namespace WebApplicationCTDEO.Models
     public bool PaisSeparados { get; set; }
     public bool NMoraComPais { get; set; }
     public string JustificativaNMoraCPais { get; set; }
-    public virtual List<Familiares> Familiares { get; set; }
+    public virtual List<Moradores> Familiares { get; set; }
     public RespSustento Sustento { get; set; }
     public int TrabalhadoresNaFamilia { get; set; }
     public Renda RendaMensal { get; set; }
@@ -138,7 +127,7 @@ namespace WebApplicationCTDEO.Models
         Propria, Cedida, Alugada
     }
 
-    public class Familiares
+    public class Moradores
     {
         [Key]
         public int FamiliarId { get; set; }

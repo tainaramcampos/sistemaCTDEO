@@ -18,8 +18,7 @@ namespace WebApplicationCTDEO.Controllers
         // GET: Alunos
         public ActionResult Index()
         {
-            var alunos = db.Alunos.Include(a => a.Mae).Include(a => a.Pai).Include(a => a.Reponsavel);
-            return View(alunos.ToList());
+            return View(db.Alunos.ToList());
         }
 
         // GET: Alunos/Details/5
@@ -38,21 +37,30 @@ namespace WebApplicationCTDEO.Controllers
         }
 
         // GET: Alunos/Create
-        public ActionResult Create()
+        public ActionResult Cadastrar()
         {
-            ViewBag.MaeCPF = new SelectList(db.Pais, "CPF", "Nome");
-            ViewBag.PaiCPF = new SelectList(db.Pais, "CPF", "Nome");
-            ViewBag.RespCPF = new SelectList(db.Pais, "CPF", "Nome");
-            ViewBag.Turmas = new SelectList(db.Turmas, "TurmaId", "Nome");
+
+            ViewData["Turmas"] = new SelectList(db.Turmas, "TurmaId", "Nome");
             return View();
         }
+
+        public PartialViewResult CreateStudent()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult CreateFamiliar()
+        {
+            return PartialView();
+        }
+        
 
         // POST: Alunos/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AlunoId,Nome,Genero,DatadeNascimento,Procedencia,CPF,RG,OrgaoExp,DatadeExp,Endereco,Numero,Complemento,Bairro,Municipio,Comunidade,CEP,TelefoneResidencial,Celular,MaeCPF,PaiCPF,EscolhaResponsavel,RespCPF,InstituicaodeEnsino,RededeEnsino,CRE,BolsadeEstudos,TipodeInstituicao,Serie,Turno,Transporte,RegistroFed,TipodeBolsaAtleta")] Aluno aluno)
+        public ActionResult Create([Bind(Include = "AlunoId,Nome,Genero,DatadeNascimento,Procedencia,CPF,RG,OrgaoExp,DatadeExp,Endereco,Numero,Complemento,Bairro,Municipio,Comunidade,CEP,TelefoneResidencial,Celular,InstituicaodeEnsino,RededeEnsino,CRE,BolsadeEstudos,TipodeInstituicao,Serie,Turno,Transporte,RegistroFed,TipodeBolsaAtleta")] Aluno aluno)
         {
             if (ModelState.IsValid)
             {
@@ -61,9 +69,6 @@ namespace WebApplicationCTDEO.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MaeCPF = new SelectList(db.Pais, "CPF", "Nome", aluno.MaeCPF);
-            ViewBag.PaiCPF = new SelectList(db.Pais, "CPF", "Nome", aluno.PaiCPF);
-            ViewBag.RespCPF = new SelectList(db.Pais, "CPF", "Nome", aluno.RespCPF);
             return View(aluno);
         }
 
@@ -79,9 +84,6 @@ namespace WebApplicationCTDEO.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.MaeCPF = new SelectList(db.Pais, "CPF", "Nome", aluno.MaeCPF);
-            ViewBag.PaiCPF = new SelectList(db.Pais, "CPF", "Nome", aluno.PaiCPF);
-            ViewBag.RespCPF = new SelectList(db.Pais, "CPF", "Nome", aluno.RespCPF);
             return View(aluno);
         }
 
@@ -90,7 +92,7 @@ namespace WebApplicationCTDEO.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AlunoId,Nome,Genero,DatadeNascimento,Procedencia,CPF,RG,OrgaoExp,DatadeExp,Endereco,Numero,Complemento,Bairro,Municipio,Comunidade,CEP,TelefoneResidencial,Celular,MaeCPF,PaiCPF,EscolhaResponsavel,RespCPF,InstituicaodeEnsino,RededeEnsino,CRE,BolsadeEstudos,TipodeInstituicao,Serie,Turno,Transporte,RegistroFed,TipodeBolsaAtleta")] Aluno aluno)
+        public ActionResult Edit([Bind(Include = "AlunoId,Nome,Genero,DatadeNascimento,Procedencia,CPF,RG,OrgaoExp,DatadeExp,Endereco,Numero,Complemento,Bairro,Municipio,Comunidade,CEP,TelefoneResidencial,Celular,InstituicaodeEnsino,RededeEnsino,CRE,BolsadeEstudos,TipodeInstituicao,Serie,Turno,Transporte,RegistroFed,TipodeBolsaAtleta")] Aluno aluno)
         {
             if (ModelState.IsValid)
             {
@@ -98,9 +100,6 @@ namespace WebApplicationCTDEO.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MaeCPF = new SelectList(db.Pais, "CPF", "Nome", aluno.MaeCPF);
-            ViewBag.PaiCPF = new SelectList(db.Pais, "CPF", "Nome", aluno.PaiCPF);
-            ViewBag.RespCPF = new SelectList(db.Pais, "CPF", "Nome", aluno.RespCPF);
             return View(aluno);
         }
 

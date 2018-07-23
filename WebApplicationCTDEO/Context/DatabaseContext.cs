@@ -25,15 +25,24 @@ namespace WebApplicationCTDEO.Context
                 a.MapLeftKey("AlunoId");
                 a.MapRightKey("Turma_Id");
             });
+            //relação entre aluno e familiar
+            modelBuilder.Entity<Aluno>()
+           .HasMany(c => c.Familiar)
+           .WithMany(c => c.Alunos)
+           .Map(a => {
+               a.ToTable("Aluno_Familiar");
+               a.MapLeftKey("AlunoId");
+               a.MapRightKey("Familiar_Id");
+           });
 
             base.OnModelCreating(modelBuilder);
 
         }
 
         public DbSet<Aluno> Alunos { get; set; }
-        public DbSet<Familiares> Familiar { get; set; }
+        public DbSet<Moradores> Familiar { get; set; }
         public DbSet<AlunoSocial> AlunoSocial { get; set; }
-        public DbSet<Responsavel> Pais { get; set; }
+        public DbSet<Familiar> Pais { get; set; }
         public DbSet<Turma> Turmas { get; set; }
         public DbSet<Modalidade> Modalidade { get; set; }
 
