@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Page level plugin CSS-->
+    <link href="~/Content/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+        <div class="container-fluid">
+            <!-- Area Chart Example-->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-area-chart"></i> Número de Alunos Matriculados
+                </div>
+                <div class="card-body">
+                    <canvas id="myAreaChart" width="100%" height="30"></canvas>
+                </div>
+            </div>
+
+            <!-- Example Bar Chart Card-->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i> Exemplo de gráfico de barras
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-8 my-auto">
+                            <canvas id="myBarChart" width="100" height="50"></canvas>
+                        </div>
+                        <div class="col-sm-4 text-center my-auto">
+                            <div class="h4 mb-0 text-primary">Dado 1</div>
+                            <div class="small text-muted">Legenda 1</div>
+                            <hr>
+                            <div class="h4 mb-0 text-warning">Dado 2</div>
+                            <div class="small text-muted">Legenda 2</div>
+                            <hr>
+                            <div class="h4 mb-0 text-success">Dado 3</div>
+                            <div class="small text-muted">Legenda 3</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Example Pie Chart Card-->
+                <div class="card mb-3" width="50%" height="50">
+                    <div class="card-header">
+                        <i class="fa fa-pie-chart"></i> Classificação de alunos por modalidade
+                    </div>
+                    <div class="card-body">
+                        <canvas id="myPieChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+
+
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fa fa-angle-up"></i>
+        </a>
+        <!-- Bootstrap core JavaScript-->
+        <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+        <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Page level plugin JavaScript-->
+        <script src="~/Content/vendor/chart.js/Chart.min.js"></script>
+        <script src="~/Content/vendor/datatables/jquery.dataTables.js"></script>
+        <script src="~/Content/vendor/datatables/dataTables.bootstrap4.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="~/Scripts/sb-admin.min.js"></script>
+        <!-- Custom scripts for this page-->
+        <script src="~/Scripts/sb-admin-datatables.min.js"></script>
+        <script src="~/Scripts/sb-admin-charts.js"></script>
+</body>
+
+</html>
+
+
