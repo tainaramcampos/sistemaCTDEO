@@ -17,7 +17,7 @@ namespace WebApplicationCTDEO.Context
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             //adicionando a relação entre aluno e turma
-            modelBuilder.Entity<Aluno>()
+            /*modelBuilder.Entity<Aluno>()
             .HasMany(c => c.Turmas)
             .WithMany(c => c.Alunos)
             .Map(a => {
@@ -33,16 +33,15 @@ namespace WebApplicationCTDEO.Context
                a.ToTable("Aluno_Familiar");
                a.MapLeftKey("AlunoId");
                a.MapRightKey("Familiar_Id");
-           });
+           });*/
 
             base.OnModelCreating(modelBuilder);
 
         }
 
         public DbSet<Aluno> Alunos { get; set; }
-        public DbSet<Moradores> Familiar { get; set; }
+        public DbSet<Familiar> Familiar { get; set; }
         public DbSet<AlunoSocial> AlunoSocial { get; set; }
-        public DbSet<Familiar> Pais { get; set; }
         public DbSet<Turma> Turmas { get; set; }
         public DbSet<Modalidade> Modalidade { get; set; }
 

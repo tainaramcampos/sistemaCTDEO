@@ -18,7 +18,14 @@ namespace WebApplicationCTDEO.Models
         [Required]
         public DateTime DatadeNascimento { get; set; }
         public Projetos Procedencia { get; set; }
-        public ICollection<Turma> Turmas { get; set; }
+
+        public Aluno()
+        {
+            this.Turmas = new HashSet<Turma>();
+            this.Familiar = new HashSet<Familiar>();
+        }
+
+        public virtual ICollection<Turma> Turmas { get; set; }
         public string CPF { get; set; }
         public string RG { get; set; }
         public string OrgaoExp { get; set; }
@@ -34,7 +41,7 @@ namespace WebApplicationCTDEO.Models
         public string CEP { get; set; }
         public string TelefoneResidencial { get; set; }
         public string Celular { get; set; }
-        public ICollection<Familiar> Familiar { get; set; }
+        public virtual ICollection<Familiar> Familiar { get; set; }
         public string InstituicaodeEnsino { get; set; }
         public Instituicao RededeEnsino { get; set; }
         public string CRE { get; set; }

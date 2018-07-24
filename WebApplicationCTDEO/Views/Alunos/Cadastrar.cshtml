@@ -1,3 +1,13 @@
 ﻿
-@{Html.RenderPartial("CreateStudent");}
-@{Html.RenderPartial("CreateFamiliar");}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    Html.RenderPartial("CreateStudent");
+    //Html.RenderPartial("CreateFamiliar", new WebApplicationCTDEO.Models.Familiar());
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Cadastrar" class="btn btn-default" />
+        </div>
+    </div>
+}

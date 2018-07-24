@@ -14,7 +14,13 @@ namespace WebApplicationCTDEO.Models
         public int ModalidadeId { get; set; }
         [ForeignKey("ModalidadeId")]
         public Modalidade Modalidade { get; set; }
-        public ICollection<Aluno> Alunos { get; set; }
+
+        public Turma()
+        {
+            this.Alunos = new HashSet<Aluno>();
+        }
+
+        public virtual ICollection<Aluno> Alunos { get; set; }
         public DiadaSemana Dias { get; set; }
         public DateTime Horario { get; set; }
     }

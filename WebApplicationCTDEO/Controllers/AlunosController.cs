@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using WebApplicationCTDEO.Context;
 using WebApplicationCTDEO.Models;
@@ -37,11 +33,27 @@ namespace WebApplicationCTDEO.Controllers
         }
 
         // GET: Alunos/Create
+        [HttpGet]
         public ActionResult Cadastrar()
+        {
+            ViewData["Turmas"] = new SelectList(db.Turmas, "TurmaId", "Nome");
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Cadastrar([Bind(Include = "AlunoId,Nome,Genero,DatadeNascimento,Procedencia,CPF,RG,OrgaoExp,DatadeExp,Endereco,Numero,Complemento,Bairro,Municipio,Comunidade,CEP,TelefoneResidencial,Celular,InstituicaodeEnsino,RededeEnsino,CRE,BolsadeEstudos,TipodeInstituicao,Serie,Turno,Transporte,RegistroFed,TipodeBolsaAtleta")] Aluno aluno, [Bind(Include = "CPF,Nome,Profissao,GraudeParentesco, IsResponsavel")] Familiar familiar)
         {
 
             ViewData["Turmas"] = new SelectList(db.Turmas, "TurmaId", "Nome");
-            return View();
+            if (ModelState.IsValid)
+            {
+                db.Alunos.Add(aluno);
+                //db.Familiar.Add(familiar);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(aluno);
         }
 
         public PartialViewResult CreateStudent()
@@ -60,16 +72,9 @@ namespace WebApplicationCTDEO.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AlunoId,Nome,Genero,DatadeNascimento,Procedencia,CPF,RG,OrgaoExp,DatadeExp,Endereco,Numero,Complemento,Bairro,Municipio,Comunidade,CEP,TelefoneResidencial,Celular,InstituicaodeEnsino,RededeEnsino,CRE,BolsadeEstudos,TipodeInstituicao,Serie,Turno,Transporte,RegistroFed,TipodeBolsaAtleta")] Aluno aluno)
+        public ActionResult Create()
         {
-            if (ModelState.IsValid)
-            {
-                db.Alunos.Add(aluno);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(aluno);
+            return View();
         }
 
         // GET: Alunos/Edit/5
