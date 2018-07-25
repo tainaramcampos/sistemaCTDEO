@@ -10,14 +10,15 @@ namespace WebApplicationCTDEO.Models
     public class Aluno
     {
         public int AlunoId { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Este campo é obrigatório")]
         public string Nome { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Este campo é obrigatório")]
         public Sexo Genero { get; set; }
+
         [DataType(DataType.Date)]
-        [Required]
+        [Required(ErrorMessage = "Este campo é obrigatório")]
         public DateTime DatadeNascimento { get; set; }
-        public Projetos Procedencia { get; set; }
+        public Projetos? Procedencia { get; set; }
 
         public Aluno()
         {
@@ -31,16 +32,19 @@ namespace WebApplicationCTDEO.Models
         public string OrgaoExp { get; set; }
         [DataType(DataType.Date)]
         public DateTime? DatadeExp { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Este campo é obrigatório")]
         public string Endereco { get; set; }
+        [Required(ErrorMessage = "Este campo é obrigatório")]
         public int Numero { get; set; }
         public string Complemento { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Este campo é obrigatório")]
         public string Bairro { get; set; }
         public string Municipio { get; set; }
         public string Comunidade { get; set; }
         public string CEP { get; set; }
+        [DataType(DataType.PhoneNumber)]
         public string TelefoneResidencial { get; set; }
+        [DataType(DataType.PhoneNumber)]
         public string Celular { get; set; }
         public virtual ICollection<Familiar> Familiar { get; set; }
         public string InstituicaodeEnsino { get; set; }
@@ -52,11 +56,11 @@ namespace WebApplicationCTDEO.Models
         public HorariodeEstudo Turno { get; set; }
         public TipodeTransporte Transporte { get; set; }
         public string RegistroFed { get; set; }
-        public TipodeBolsa TipodeBolsaAtleta { get; set; }
+        public TipodeBolsa? TipodeBolsaAtleta { get; set; }
     }
     public enum Sexo
     {
-        Feminino, Masculino
+        Masculino, Feminino
     }
     
     public enum TipodeBolsa
@@ -66,7 +70,8 @@ namespace WebApplicationCTDEO.Models
 
     public enum TipodeTransporte
     {
-        Ape, Bicicleta, Onibus, OnibuseTrem, Trem, Particular
+       [Display(Name = "A pé")] Ape, Bicicleta, [Display(Name = "Ônibus")] Onibus,
+        [Display(Name = "Ônibus e Trem")] OnibuseTrem, Trem, [Display(Name = "Carro Particular")] Particular
     }
 
     public enum HorariodeEstudo
@@ -79,7 +84,7 @@ namespace WebApplicationCTDEO.Models
     }
     public enum Instituicao
     {
-        Publica, Privada
+        [Display(Name = "Pública")] Publica, Privada
     }
     public enum Projetos
     {
@@ -87,7 +92,7 @@ namespace WebApplicationCTDEO.Models
     }
     public enum TipoResponsavel
     {
-        Mae, Pai, Outro
+        [Display(Name = "Mãe")] Mae, Pai, Outro
     }
     
     public class AlunoSocial
@@ -117,7 +122,8 @@ namespace WebApplicationCTDEO.Models
 
     public enum RespSustento //checkbox
     {
-        Pai, Mae, PaieMae, Padrasto, Irmao, Avos, Outros
+        Pai, [Display(Name = "Mãe")] Mae, [Display(Name = "Pai e Mãe")] PaieMae, Padrasto, [Display(Name = "Irmão")] Irmao,
+        [Display(Name = "Avós")] Avos, Outros
     }
 
     public enum ComoSoube
@@ -127,12 +133,14 @@ namespace WebApplicationCTDEO.Models
 
     public enum Renda
     {
-        Ate1Sal, Ate3Sal, Acima3Sal, SemRenda
+        [Display(Name = "Até 1 salário mínimo")] Ate1Sal, [Display(Name = "Até 3 salários mínimos")] Ate3Sal,
+        [Display(Name = "Acima de 3 salários mínimos")] Acima3Sal,
+        [Display(Name = "Vive de ajuda de terceiros")] SemRenda
     }
 
     public enum TipoResidencia
     {
-        Propria, Cedida, Alugada
+        [Display(Name = "Própria")] Propria, Cedida, Alugada
     }
 
     public class Moradores
