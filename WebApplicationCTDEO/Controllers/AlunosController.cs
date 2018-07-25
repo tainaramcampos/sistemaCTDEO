@@ -42,13 +42,16 @@ namespace WebApplicationCTDEO.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Cadastrar([Bind(Include = "AlunoId,Nome,Genero,DatadeNascimento,Procedencia,CPF,RG,OrgaoExp,DatadeExp,Endereco,Numero,Complemento,Bairro,Municipio,Comunidade,CEP,TelefoneResidencial,Celular,InstituicaodeEnsino,RededeEnsino,CRE,BolsadeEstudos,TipodeInstituicao,Serie,Turno,Transporte,RegistroFed,TipodeBolsaAtleta")] Aluno aluno, [Bind(Include = "CPF,Nome,Profissao,GraudeParentesco, IsResponsavel")] Familiar familiar)
+        public ActionResult Cadastrar([Bind(Include = "AlunoId,Nome,Genero,DatadeNascimento,Procedencia,CPF,RG,OrgaoExp,DatadeExp,Endereco,Numero,Complemento,Bairro,Municipio,Comunidade,CEP,TelefoneResidencial,Celular,InstituicaodeEnsino,RededeEnsino,CRE,BolsadeEstudos,TipodeInstituicao,Serie,Turno,Transporte,RegistroFed,TipodeBolsaAtleta")] Aluno aluno,
+            [Bind(Include = "AlunoId,PaisSeparados,NMoraComPais,JustificativaNMoraCPais,Sustento,TrabalhadoresNaFamilia,RendaMensal,TipodeBeneficio,Residencia,QtasCriancasEstudando,Fumantes,Alcoolismo,EnvolvidocomDrogas,ComoConheceu,OutroProjetoqParticipa")] AlunoSocial alunoSocial
+           /* [Bind(Include = "CPF,Nome,Profissao,GraudeParentesco, IsResponsavel")] Familiar familiar*/)
         {
 
             ViewData["Turmas"] = new SelectList(db.Turmas, "TurmaId", "Nome");
             if (ModelState.IsValid)
             {
                 db.Alunos.Add(aluno);
+                db.AlunoSocial.Add(alunoSocial);
                 //db.Familiar.Add(familiar);
                 db.SaveChanges();
                 return RedirectToAction("Index");

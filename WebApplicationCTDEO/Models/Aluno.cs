@@ -29,7 +29,8 @@ namespace WebApplicationCTDEO.Models
         public string CPF { get; set; }
         public string RG { get; set; }
         public string OrgaoExp { get; set; }
-        public DateTime DatadeExp { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime? DatadeExp { get; set; }
         [Required]
         public string Endereco { get; set; }
         public int Numero { get; set; }
@@ -106,7 +107,7 @@ namespace WebApplicationCTDEO.Models
     public string TipodeBeneficio { get; set; }
     public TipoResidencia Residencia { get; set; }
     public int QtasCriancasEstudando { get; set; }
-    public List<string> EnfermidadesnaFamilia { get; set; }
+    public string EnfermidadesnaFamilia { get; set; }
     public string Fumantes { get; set; }
     public string Alcoolismo { get; set; }
     public string EnvolvidocomDrogas { get; set; }

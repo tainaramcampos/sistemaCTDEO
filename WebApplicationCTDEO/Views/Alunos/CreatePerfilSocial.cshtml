@@ -1,0 +1,120 @@
+﻿@model WebApplicationCTDEO.Models.AlunoSocial
+
+
+<h4 class="col-md-10 text-center">Perfil Social</h4>
+<div class="form-horizontal">
+
+    <div class="form-group col-md-10">
+        @Html.LabelFor(model => model.PaisSeparados, "Possui pais separados?", htmlAttributes: new { @class = "control-label" })
+        <div">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.PaisSeparados)
+                @Html.ValidationMessageFor(model => model.PaisSeparados, "", new { @class = "text-danger" })
+            </div>
+    </div>
+</div>
+
+<div class="form-group col-md-10">
+    <div class="row">
+        <div class="col-6">
+            @Html.LabelFor(model => model.NMoraComPais, "Vive sem a presença pais?", htmlAttributes: new { @class = "control-label " })
+            <div class="checkbox">
+                @Html.EditorFor(model => model.NMoraComPais)
+                @Html.ValidationMessageFor(model => model.NMoraComPais, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-6">
+            @Html.LabelFor(model => model.JustificativaNMoraCPais, "Justificativa", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.JustificativaNMoraCPais, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.JustificativaNMoraCPais, "", new { @class = "text-danger" })
+        </div>
+    </div>
+</div>
+
+<div class="form-group col-md-10">
+    @Html.LabelFor(model => model.Sustento, "Quem é o principal responsável pelo sustento da família?", htmlAttributes: new { @class = "control-label" })
+    <div>
+        @Html.EnumDropDownListFor(model => model.Sustento, htmlAttributes: new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Sustento, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group col-md-10">
+    @Html.LabelFor(model => model.TrabalhadoresNaFamilia, "Quantas pessoas trabalham na família?", htmlAttributes: new { @class = "control-label" })
+    <div>
+        @Html.EditorFor(model => model.TrabalhadoresNaFamilia, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.TrabalhadoresNaFamilia, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group col-md-10">
+    @Html.LabelFor(model => model.RendaMensal, "Renda mensal", htmlAttributes: new { @class = "control-label" })
+    <div>
+        @Html.EnumDropDownListFor(model => model.RendaMensal, htmlAttributes: new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.RendaMensal, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group col-md-10">
+    @Html.LabelFor(model => model.TipodeBeneficio, "Caso receba algum benefício, qual o nome?", htmlAttributes: new { @class = "control-label" })
+    <div>
+        @Html.EditorFor(model => model.TipodeBeneficio, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.TipodeBeneficio, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group col-md-10">
+    @Html.LabelFor(model => model.Residencia, "Qual é o tipo de residência de sua família?", htmlAttributes: new { @class = "control-label" })
+    <div>
+        @Html.EnumDropDownListFor(model => model.Residencia, htmlAttributes: new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Residencia, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group col-md-10">
+    @Html.LabelFor(model => model.QtasCriancasEstudando, "Quantas crianças estão estudando em sua casa?", htmlAttributes: new { @class = "control-label" })
+    <div>
+        @Html.EditorFor(model => model.QtasCriancasEstudando, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.QtasCriancasEstudando, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="col-md-10">
+    @Html.LabelFor(model => model.Fumantes, "Apresenta alguma enfermidade na família? Em caso afirmativo, quais?", htmlAttributes: new { @class = "control-label" })
+    @Html.EditorFor(model => model.Fumantes, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.Fumantes, "", new { @class = "text-danger" })
+</div>
+
+    <div class="form-group col-md-10">
+        @Html.LabelFor(model => model.Alcoolismo, "Tem algum familiar envolvido com alcoolismo? Em caso afirmativo, quem?", htmlAttributes: new { @class = "control-label" })
+        <div>
+            @Html.EditorFor(model => model.Alcoolismo, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Alcoolismo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-10">
+        @Html.LabelFor(model => model.EnvolvidocomDrogas, "Tem algum familiar envolvido com drogas? Em caso afirmativo, quem?", htmlAttributes: new { @class = "control-label" })
+        <div>
+            @Html.EditorFor(model => model.EnvolvidocomDrogas, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.EnvolvidocomDrogas, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-10">
+        @Html.LabelFor(model => model.ComoConheceu, "Como soube do projeto?", htmlAttributes: new { @class = "control-label" })
+        <div>
+            @Html.EnumDropDownListFor(model => model.ComoConheceu, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ComoConheceu, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-10">
+        @Html.LabelFor(model => model.OutroProjetoqParticipa, "Participa de outro projeto? Em caso afirmativo, qual?", htmlAttributes: new { @class = "control-label" })
+        <div>
+            @Html.EditorFor(model => model.OutroProjetoqParticipa, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.OutroProjetoqParticipa, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+</div>

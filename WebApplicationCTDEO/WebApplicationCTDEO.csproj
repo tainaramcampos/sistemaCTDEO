@@ -248,6 +248,14 @@
     <Compile Include="Migrations\201807241239518_Nova_configuracao_NparaN1.Designer.cs">
       <DependentUpon>201807241239518_Nova_configuracao_NparaN1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807251521340_Modificacao_de_tipo_propriedades.cs" />
+    <Compile Include="Migrations\201807251521340_Modificacao_de_tipo_propriedades.Designer.cs">
+      <DependentUpon>201807251521340_Modificacao_de_tipo_propriedades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807251536433_Modificacao_de_tipo_propriedades1.cs" />
+    <Compile Include="Migrations\201807251536433_Modificacao_de_tipo_propriedades1.Designer.cs">
+      <DependentUpon>201807251536433_Modificacao_de_tipo_propriedades1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Familiar.cs" />
@@ -273,6 +281,7 @@
     <Content Include="Views\Turmas\Edit.cshtml" />
     <Content Include="Views\Turmas\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Alunos\CreatePerfilSocial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -282,6 +291,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\AlunoSocials\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201807182124349_Initial.resx">
@@ -316,6 +326,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807241239518_Nova_configuracao_NparaN1.resx">
       <DependentUpon>201807241239518_Nova_configuracao_NparaN1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807251521340_Modificacao_de_tipo_propriedades.resx">
+      <DependentUpon>201807251521340_Modificacao_de_tipo_propriedades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807251536433_Modificacao_de_tipo_propriedades1.resx">
+      <DependentUpon>201807251536433_Modificacao_de_tipo_propriedades1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
