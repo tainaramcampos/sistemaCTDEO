@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<WebApplicationCTDEO.Models.Aluno>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "IndexAlunos";
 }
 
-<h2>Index</h2>
+<h2>IndexAlunos</h2>
 
 <p>
-    @Html.ActionLink("Novo Cadastro", "Cadastrar")
+    @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table-responsive table-bordered table-hover">
+<table class="table table-responsive">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Nome)

@@ -12,7 +12,7 @@ namespace WebApplicationCTDEO.Controllers
         private DatabaseContext db = new DatabaseContext();
 
         // GET: Alunos
-        public ActionResult Index()
+        public ActionResult IndexAlunos()
         {
             return View(db.Alunos.ToList());
         }
@@ -54,7 +54,7 @@ namespace WebApplicationCTDEO.Controllers
                 db.AlunoSocial.Add(alunoSocial);
                 //db.Familiar.Add(familiar);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexAlunos");
             }
             return View(aluno);
         }

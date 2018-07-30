@@ -268,6 +268,18 @@
     <Compile Include="Migrations\201807252001452_Modificacao_de_tipo_propriedades4.Designer.cs">
       <DependentUpon>201807252001452_Modificacao_de_tipo_propriedades4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807301237291_modificacao_nome_atributo.cs" />
+    <Compile Include="Migrations\201807301237291_modificacao_nome_atributo.Designer.cs">
+      <DependentUpon>201807301237291_modificacao_nome_atributo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807301240238_modificacao_nome_atributo1.cs" />
+    <Compile Include="Migrations\201807301240238_modificacao_nome_atributo1.Designer.cs">
+      <DependentUpon>201807301240238_modificacao_nome_atributo1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807301249463_modificacao_nome_atributo2.cs" />
+    <Compile Include="Migrations\201807301249463_modificacao_nome_atributo2.Designer.cs">
+      <DependentUpon>201807301249463_modificacao_nome_atributo2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Familiar.cs" />
@@ -294,6 +306,7 @@
     <Content Include="Views\Turmas\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Alunos\CreatePerfilSocial.cshtml" />
+    <Content Include="Views\Alunos\IndexAlunos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -353,6 +366,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807252001452_Modificacao_de_tipo_propriedades4.resx">
       <DependentUpon>201807252001452_Modificacao_de_tipo_propriedades4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807301237291_modificacao_nome_atributo.resx">
+      <DependentUpon>201807301237291_modificacao_nome_atributo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807301240238_modificacao_nome_atributo1.resx">
+      <DependentUpon>201807301240238_modificacao_nome_atributo1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807301249463_modificacao_nome_atributo2.resx">
+      <DependentUpon>201807301249463_modificacao_nome_atributo2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

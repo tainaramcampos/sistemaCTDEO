@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
 
 namespace WebApplicationCTDEO.Models
 {
@@ -18,7 +16,7 @@ namespace WebApplicationCTDEO.Models
         [DataType(DataType.Date)]
         [Required(ErrorMessage = "Este campo é obrigatório")]
         public DateTime DatadeNascimento { get; set; }
-        public Projetos? Procedencia { get; set; }
+        public string Procedencia { get; set; }
 
         public Aluno()
         {
@@ -45,13 +43,14 @@ namespace WebApplicationCTDEO.Models
         [DataType(DataType.PhoneNumber)]
         public string TelefoneResidencial { get; set; }
         [DataType(DataType.PhoneNumber)]
+        [Required(ErrorMessage = "Este campo é obrigatório")]
         public string Celular { get; set; }
         public virtual ICollection<Familiar> Familiar { get; set; }
         public string InstituicaodeEnsino { get; set; }
         public Instituicao RededeEnsino { get; set; }
-        public string CRE { get; set; }
+        public string RegiaoAdministrativa { get; set; }
         public bool BolsadeEstudos { get; set; }
-        public TipodeInst TipodeInstituicao { get; set; }
+        public TipodeInst SistemadeEnsino { get; set; }
         public string Serie { get; set; }
         public HorariodeEstudo Turno { get; set; }
         public TipodeTransporte Transporte { get; set; }
@@ -80,16 +79,13 @@ namespace WebApplicationCTDEO.Models
     }
     public enum TipodeInst
     {
-        Metropolitana, Federal
+        Municipal, Estadual, Federal
     }
     public enum Instituicao
     {
         [Display(Name = "Pública")] Publica, Privada
     }
-    public enum Projetos
-    {
-        BonsFrutos, PRCC, CRAS, CRE
-    }
+    
     public enum TipoResponsavel
     {
         [Display(Name = "Mãe")] Mae, Pai, Outro
@@ -128,7 +124,7 @@ namespace WebApplicationCTDEO.Models
 
     public enum ComoSoube
     {
-        Aluno, Rede, Escola, Panfleto, Outros
+        Aluno, Parceiros, Escola, Panfleto, Internet, Outros
     }
 
     public enum Renda
