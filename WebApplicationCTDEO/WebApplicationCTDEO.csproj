@@ -177,6 +177,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\CustomScripts.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -280,6 +281,26 @@
     <Compile Include="Migrations\201807301249463_modificacao_nome_atributo2.Designer.cs">
       <DependentUpon>201807301249463_modificacao_nome_atributo2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807302303403_modificacao_tipo_serie.cs" />
+    <Compile Include="Migrations\201807302303403_modificacao_tipo_serie.Designer.cs">
+      <DependentUpon>201807302303403_modificacao_tipo_serie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807302322525_modificacao_tipo_serie1.cs" />
+    <Compile Include="Migrations\201807302322525_modificacao_tipo_serie1.Designer.cs">
+      <DependentUpon>201807302322525_modificacao_tipo_serie1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807302338098_modificacao_tipo_serie2.cs" />
+    <Compile Include="Migrations\201807302338098_modificacao_tipo_serie2.Designer.cs">
+      <DependentUpon>201807302338098_modificacao_tipo_serie2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807302344410_modificacao_dropdown.cs" />
+    <Compile Include="Migrations\201807302344410_modificacao_dropdown.Designer.cs">
+      <DependentUpon>201807302344410_modificacao_dropdown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807302350400_modificacao_dropdown1.cs" />
+    <Compile Include="Migrations\201807302350400_modificacao_dropdown1.Designer.cs">
+      <DependentUpon>201807302350400_modificacao_dropdown1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Familiar.cs" />
@@ -375,6 +396,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807301249463_modificacao_nome_atributo2.resx">
       <DependentUpon>201807301249463_modificacao_nome_atributo2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807302303403_modificacao_tipo_serie.resx">
+      <DependentUpon>201807302303403_modificacao_tipo_serie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807302322525_modificacao_tipo_serie1.resx">
+      <DependentUpon>201807302322525_modificacao_tipo_serie1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807302338098_modificacao_tipo_serie2.resx">
+      <DependentUpon>201807302338098_modificacao_tipo_serie2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807302344410_modificacao_dropdown.resx">
+      <DependentUpon>201807302344410_modificacao_dropdown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807302350400_modificacao_dropdown1.resx">
+      <DependentUpon>201807302350400_modificacao_dropdown1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

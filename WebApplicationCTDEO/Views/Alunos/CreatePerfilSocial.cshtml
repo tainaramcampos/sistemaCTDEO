@@ -34,7 +34,7 @@
 <div class="form-group col-md-10">
     @Html.LabelFor(model => model.Sustento, "Quem é o principal responsável pelo sustento da família?", htmlAttributes: new { @class = "control-label" })
     <div>
-        @Html.EnumDropDownListFor(model => model.Sustento, htmlAttributes: new { @class = "form-control" })
+        @Html.EnumDropDownListFor(model => model.Sustento, "--Selecione--", htmlAttributes: new { @class = "form-control" })
         @Html.ValidationMessageFor(model => model.Sustento, "", new { @class = "text-danger" })
     </div>
 </div>
@@ -50,7 +50,7 @@
 <div class="form-group col-md-10">
     @Html.LabelFor(model => model.RendaMensal, "Renda mensal", htmlAttributes: new { @class = "control-label" })
     <div>
-        @Html.EnumDropDownListFor(model => model.RendaMensal, htmlAttributes: new { @class = "form-control" })
+        @Html.EnumDropDownListFor(model => model.RendaMensal, "--Selecione--", htmlAttributes: new { @class = "form-control" })
         @Html.ValidationMessageFor(model => model.RendaMensal, "", new { @class = "text-danger" })
     </div>
 </div>
@@ -66,7 +66,7 @@
 <div class="form-group col-md-10">
     @Html.LabelFor(model => model.Residencia, "Qual é o tipo de residência de sua família?", htmlAttributes: new { @class = "control-label" })
     <div>
-        @Html.EnumDropDownListFor(model => model.Residencia, htmlAttributes: new { @class = "form-control" })
+        @Html.EnumDropDownListFor(model => model.Residencia, "--Selecione--", htmlAttributes: new { @class = "form-control" })
         @Html.ValidationMessageFor(model => model.Residencia, "", new { @class = "text-danger" })
     </div>
 </div>
@@ -104,7 +104,7 @@
     <div class="form-group col-md-10">
         @Html.LabelFor(model => model.ComoConheceu, "Como soube do projeto?", htmlAttributes: new { @class = "control-label" })
         <div>
-            @Html.EnumDropDownListFor(model => model.ComoConheceu, htmlAttributes: new { @class = "form-control" })
+            @Html.EnumDropDownListFor(model => model.ComoConheceu, "--Selecione--", htmlAttributes: new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.ComoConheceu, "", new { @class = "text-danger" })
         </div>
     </div>
