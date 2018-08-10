@@ -12,3 +12,7 @@ $(document).on('change', '#tipoInst', function () {
         $("#RegAdm").hide();
     }
 });
+
+function confirmarSalvamento() {
+    confirm("Confirma o salvamento?");
+};
