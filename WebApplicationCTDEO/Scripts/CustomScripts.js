@@ -1,4 +1,6 @@
-﻿$("#RegAdm").hide();
+﻿
+$("#RegAdm").hide();
+$("#bolsa").hide();
 
 $(document).on('change', '#tipoInst', function () {
     if ($('#tipoInst').val() == 0) {
@@ -6,6 +8,7 @@ $(document).on('change', '#tipoInst', function () {
     }
     else
     {
+        $("#bolsa").show();
         $("#RegAdm").hide();
     }
 });
