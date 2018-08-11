@@ -11,7 +11,7 @@
 
 <div class="form-group col-md-10">
     @Html.LabelFor(model => model.Nome,"Nome *", htmlAttributes: new { @class = "control-label" })
-    @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", @onkeyup = "InputToUpper(this);" }})
     @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
 </div>
 
@@ -45,7 +45,7 @@
         </div>
         <div class="col-4">
             @Html.LabelFor(model => model.OrgaoExp, "Órgão expedidor", htmlAttributes: new { @class = "control-label" })
-            @Html.EditorFor(model => model.OrgaoExp, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.OrgaoExp, new { htmlAttributes = new { @class = "form-control", @onkeyup = "InputToUpper(this);" } })
             @Html.ValidationMessageFor(model => model.OrgaoExp, "", new { @class = "text-danger" })
         </div>
         <div class="col-4">
@@ -58,7 +58,7 @@
 
 <div class="form-group col-md-10">
     @Html.LabelFor(model => model.Endereco, "Endereço *", htmlAttributes: new { @class = "control-label" })
-    @Html.EditorFor(model => model.Endereco, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.EditorFor(model => model.Endereco, new { htmlAttributes = new { @class = "form-control", @onkeyup = "InputToUpper(this);" } })
     @Html.ValidationMessageFor(model => model.Endereco, "", new { @class = "text-danger" })
 </div>
 
@@ -71,7 +71,7 @@
         </div>
         <div class="col-4">
             @Html.LabelFor(model => model.Complemento, htmlAttributes: new { @class = "control-label" })
-            @Html.EditorFor(model => model.Complemento, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.Complemento, new { htmlAttributes = new { @class = "form-control", @onkeyup = "InputToUpper(this);" } })
             @Html.ValidationMessageFor(model => model.Complemento, "", new { @class = "text-danger" })
         </div>
         <div class="col-4">
@@ -86,17 +86,17 @@
     <div class="row">
         <div class="col-4">
             @Html.LabelFor(model => model.Municipio, "Município", htmlAttributes: new { @class = "control-label" })
-            @Html.EditorFor(model => model.Municipio, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.Municipio, new { htmlAttributes = new { @class = "form-control", @onkeyup = "InputToUpper(this);" } })
             @Html.ValidationMessageFor(model => model.Municipio, "", new { @class = "text-danger" })
         </div>
         <div class="col-4">
             @Html.LabelFor(model => model.Bairro,"Bairro *", htmlAttributes: new { @class = "control-label" })
-            @Html.EditorFor(model => model.Bairro, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.Bairro, new { htmlAttributes = new { @class = "form-control", @onkeyup = "InputToUpper(this);" } })
             @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
         </div>
         <div class="col-4">
             @Html.LabelFor(model => model.Comunidade, htmlAttributes: new { @class = "control-label" })
-            @Html.EditorFor(model => model.Comunidade, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.Comunidade, new { htmlAttributes = new { @class = "form-control", @onkeyup = "InputToUpper(this);" } })
             @Html.ValidationMessageFor(model => model.Comunidade, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -106,7 +106,7 @@
     <div class="row">
         <div class="col-6">
             @Html.LabelFor(model => model.TelefoneResidencial, "Telefone Residencial", htmlAttributes: new { @class = "control-label" })
-            @Html.EditorFor(model => model.TelefoneResidencial, new { htmlAttributes = new { @class = "form-control", @id="TelRes"} })
+            @Html.EditorFor(model => model.TelefoneResidencial, new { htmlAttributes = new { @class = "form-control", @id="TelRes", @onkeyup = "InputToUpper(this);" } })
             @Html.ValidationMessageFor(model => model.TelefoneResidencial, "", new { @class = "text-danger" })
         </div>
         <div class="col-6">
@@ -123,7 +123,7 @@
     <div class="row">
         <div class="col-6">
             @Html.LabelFor(model => model.InstituicaodeEnsino, "Instituição de Ensino", htmlAttributes: new { @class = "control-label" })
-            @Html.EditorFor(model => model.InstituicaodeEnsino, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.InstituicaodeEnsino, new { htmlAttributes = new { @class = "form-control", @onkeyup = "InputToUpper(this);" } })
             @Html.ValidationMessageFor(model => model.InstituicaodeEnsino, "", new { @class = "text-danger" })
         </div>
 
@@ -146,7 +146,7 @@
 
         <div class="col-6">
             @Html.LabelFor(model => model.RegiaoAdministrativa, "Região Administrativa", htmlAttributes: new { @class = "control-label" })
-            @Html.EditorFor(model => model.RegiaoAdministrativa, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.RegiaoAdministrativa, new { htmlAttributes = new { @class = "form-control", @onkeyup = "InputToUpper(this);" } })
             @Html.ValidationMessageFor(model => model.RegiaoAdministrativa, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -178,7 +178,7 @@
 
 <div class="form-group col-md-10">
     @Html.LabelFor(model => model.Procedencia, "Procedência", htmlAttributes: new { @class = "control-label" })
-    @Html.EditorFor(model => model.Procedencia, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.EditorFor(model => model.Procedencia, new { htmlAttributes = new { @class = "form-control", @onkeyup = "InputToUpper(this);" } })
     @Html.ValidationMessageFor(model => model.Procedencia, "", new { @class = "text-danger" })
 </div>
 
@@ -192,7 +192,7 @@
     <div class="row">
         <div class="col-6">
             @Html.LabelFor(model => model.RegistroFed, "Registro da Federação", htmlAttributes: new { @class = "control-label" })
-            @Html.EditorFor(model => model.RegistroFed, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.RegistroFed, new { htmlAttributes = new { @class = "form-control", @onkeyup = "InputToUpper(this);" } })
             @Html.ValidationMessageFor(model => model.RegistroFed, "", new { @class = "text-danger" })
         </div>
         <div class="col-6">

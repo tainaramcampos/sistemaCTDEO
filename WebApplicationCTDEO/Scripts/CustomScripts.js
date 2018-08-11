@@ -26,8 +26,6 @@ $('input[type=text]').on('keydown', function (e) {
 });
 
 
-
-
 //permite apenas números nos campos descritos
 $("#CPF,#RG,#CEP,#TelRes,#Cel").on("keypress", function (evt) {
     evt = (evt) ? evt : window.event;
@@ -37,3 +35,10 @@ $("#CPF,#RG,#CEP,#TelRes,#Cel").on("keypress", function (evt) {
     }
     return true;
 });
+
+//mudar letrar para uppercase
+function InputToUpper(obj) {
+    if (obj.value != "") {
+        obj.value = obj.value.toUpperCase();
+    }
+}
