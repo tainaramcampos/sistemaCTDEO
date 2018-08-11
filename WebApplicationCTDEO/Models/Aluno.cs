@@ -40,8 +40,7 @@ namespace WebApplicationCTDEO.Models
 
         [Required(ErrorMessage = "Este campo é obrigatório")]
         public string Endereco { get; set; }
-
-        [Required(ErrorMessage = "Este campo é obrigatório")]
+        
         public int Numero { get; set; }
 
         public string Complemento { get; set; }

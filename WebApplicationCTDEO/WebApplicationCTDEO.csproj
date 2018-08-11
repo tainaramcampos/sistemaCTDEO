@@ -301,6 +301,14 @@
     <Compile Include="Migrations\201807302350400_modificacao_dropdown1.Designer.cs">
       <DependentUpon>201807302350400_modificacao_dropdown1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808110035007_edicao_de_campos_obrigatórios.cs" />
+    <Compile Include="Migrations\201808110035007_edicao_de_campos_obrigatórios.Designer.cs">
+      <DependentUpon>201808110035007_edicao_de_campos_obrigatórios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808110050406_Initial1.cs" />
+    <Compile Include="Migrations\201808110050406_Initial1.Designer.cs">
+      <DependentUpon>201808110050406_Initial1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Familiar.cs" />
@@ -411,6 +419,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807302350400_modificacao_dropdown1.resx">
       <DependentUpon>201807302350400_modificacao_dropdown1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808110035007_edicao_de_campos_obrigatórios.resx">
+      <DependentUpon>201808110035007_edicao_de_campos_obrigatórios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808110050406_Initial1.resx">
+      <DependentUpon>201808110050406_Initial1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
