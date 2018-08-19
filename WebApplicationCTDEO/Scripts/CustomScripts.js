@@ -1,4 +1,8 @@
-﻿//oculta ou mostra campos de acordo com a classificação da instituição (pública ou privada)
+﻿$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
+//oculta ou mostra campos de acordo com a classificação da instituição (pública ou privada)
 $("#RegAdm").hide();
 $("#bolsa").hide();
 $(document).on('change', '#tipoInst', function () {
