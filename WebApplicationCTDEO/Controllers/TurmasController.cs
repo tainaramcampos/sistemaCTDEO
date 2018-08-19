@@ -40,7 +40,7 @@ namespace WebApplicationCTDEO.Controllers
         // GET: Turmas/Create
         public ActionResult Create()
         {
-            ViewBag.ModalidadeId = new SelectList(db.Modalidade, "ModalidadeId", "Nome");
+            ViewData["ModalidadeId"] = new SelectList(db.Modalidade, "ModalidadeId", "Nome");
             return View();
         }
 

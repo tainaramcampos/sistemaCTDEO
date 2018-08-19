@@ -23,6 +23,7 @@ namespace WebApplicationCTDEO.Models
         public virtual ICollection<Aluno> Alunos { get; set; }
         public DiadaSemana Dias { get; set; }
         public DateTime Horario { get; set; }
+        public TurnoTurma Turno { get; set; }
     }
 
     public enum DiadaSemana
@@ -35,11 +36,10 @@ namespace WebApplicationCTDEO.Models
         Sabado = 5,
         Domingo = 6
     }
-    
-    public class Modalidade
+
+    public enum TurnoTurma
     {
-        public int ModalidadeId { get; set; }
-        public string Nome { get; set; }
-        public string Categoria { get; set; }
+        Manhã, Tarde
     }
-}
+
+    }

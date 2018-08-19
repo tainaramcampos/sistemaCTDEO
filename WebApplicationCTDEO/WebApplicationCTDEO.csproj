@@ -309,9 +309,34 @@
     <Compile Include="Migrations\201808110050406_Initial1.Designer.cs">
       <DependentUpon>201808110050406_Initial1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808132231177_novo_atributo_modalidade.cs" />
+    <Compile Include="Migrations\201808132231177_novo_atributo_modalidade.Designer.cs">
+      <DependentUpon>201808132231177_novo_atributo_modalidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808132253265_novo_atributo_modalidade1.cs" />
+    <Compile Include="Migrations\201808132253265_novo_atributo_modalidade1.Designer.cs">
+      <DependentUpon>201808132253265_novo_atributo_modalidade1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808132254375_novo_atributo_modalidade2.cs" />
+    <Compile Include="Migrations\201808132254375_novo_atributo_modalidade2.Designer.cs">
+      <DependentUpon>201808132254375_novo_atributo_modalidade2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808132258565_novo_atributo_modalidade3.cs" />
+    <Compile Include="Migrations\201808132258565_novo_atributo_modalidade3.Designer.cs">
+      <DependentUpon>201808132258565_novo_atributo_modalidade3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808132340034_generalizacao_modalidade.cs" />
+    <Compile Include="Migrations\201808132340034_generalizacao_modalidade.Designer.cs">
+      <DependentUpon>201808132340034_generalizacao_modalidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808191334470_atualizacao_modalidadeeturma.cs" />
+    <Compile Include="Migrations\201808191334470_atualizacao_modalidadeeturma.Designer.cs">
+      <DependentUpon>201808191334470_atualizacao_modalidadeeturma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Familiar.cs" />
+    <Compile Include="Models\Modalidade.cs" />
     <Compile Include="Models\Turma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -425,6 +450,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808110050406_Initial1.resx">
       <DependentUpon>201808110050406_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808132231177_novo_atributo_modalidade.resx">
+      <DependentUpon>201808132231177_novo_atributo_modalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808132253265_novo_atributo_modalidade1.resx">
+      <DependentUpon>201808132253265_novo_atributo_modalidade1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808132254375_novo_atributo_modalidade2.resx">
+      <DependentUpon>201808132254375_novo_atributo_modalidade2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808132258565_novo_atributo_modalidade3.resx">
+      <DependentUpon>201808132258565_novo_atributo_modalidade3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808132340034_generalizacao_modalidade.resx">
+      <DependentUpon>201808132340034_generalizacao_modalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808191334470_atualizacao_modalidadeeturma.resx">
+      <DependentUpon>201808191334470_atualizacao_modalidadeeturma.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
