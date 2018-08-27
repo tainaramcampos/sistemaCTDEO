@@ -192,6 +192,7 @@
     <Content Include="Scripts\sb-admin-datatables.min.js" />
     <Content Include="Scripts\sb-admin.js" />
     <Content Include="Scripts\sb-admin.min.js" />
+    <Content Include="Scripts\Turma.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -201,6 +202,7 @@
     <Compile Include="Context\DatabaseContext.cs" />
     <Compile Include="Controllers\AlunosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ModalidadesController.cs" />
     <Compile Include="Controllers\TurmasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -333,11 +335,28 @@
     <Compile Include="Migrations\201808191334470_atualizacao_modalidadeeturma.Designer.cs">
       <DependentUpon>201808191334470_atualizacao_modalidadeeturma.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808192316228_tirando_generalização_modalidades.cs" />
+    <Compile Include="Migrations\201808192316228_tirando_generalização_modalidades.Designer.cs">
+      <DependentUpon>201808192316228_tirando_generalização_modalidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808240200464_remocao_temporaria_de_modalidade.cs" />
+    <Compile Include="Migrations\201808240200464_remocao_temporaria_de_modalidade.Designer.cs">
+      <DependentUpon>201808240200464_remocao_temporaria_de_modalidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808262116432_tirando_generalizacao_da_modalidades.cs" />
+    <Compile Include="Migrations\201808262116432_tirando_generalizacao_da_modalidades.Designer.cs">
+      <DependentUpon>201808262116432_tirando_generalizacao_da_modalidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808262223222_adicionando_dias_da_semana_turma.cs" />
+    <Compile Include="Migrations\201808262223222_adicionando_dias_da_semana_turma.Designer.cs">
+      <DependentUpon>201808262223222_adicionando_dias_da_semana_turma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Familiar.cs" />
     <Compile Include="Models\Modalidade.cs" />
     <Compile Include="Models\Turma.cs" />
+    <Compile Include="Models\ViewModelTurma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -361,6 +380,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Alunos\CreatePerfilSocial.cshtml" />
     <Content Include="Views\Alunos\IndexAlunos.cshtml" />
+    <Content Include="Views\Turmas\View.cshtml" />
+    <Content Include="Views\Turmas\ListModalidades.cshtml" />
+    <Content Include="Views\Turmas\Cadastrar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -371,6 +393,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\AlunoSocials\" />
+    <Folder Include="Views\Modalidades\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201807182124349_Initial.resx">
@@ -468,6 +491,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808191334470_atualizacao_modalidadeeturma.resx">
       <DependentUpon>201808191334470_atualizacao_modalidadeeturma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808192316228_tirando_generalização_modalidades.resx">
+      <DependentUpon>201808192316228_tirando_generalização_modalidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808240200464_remocao_temporaria_de_modalidade.resx">
+      <DependentUpon>201808240200464_remocao_temporaria_de_modalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808262116432_tirando_generalizacao_da_modalidades.resx">
+      <DependentUpon>201808262116432_tirando_generalizacao_da_modalidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808262223222_adicionando_dias_da_semana_turma.resx">
+      <DependentUpon>201808262223222_adicionando_dias_da_semana_turma.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

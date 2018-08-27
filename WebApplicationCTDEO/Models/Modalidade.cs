@@ -9,28 +9,10 @@ namespace WebApplicationCTDEO.Models
     {
         public int ModalidadeId { get; set; }
         public string Nome { get; set; }
+        public NivelModalidade Nivel { get; set; }
+        public GruposAtletismo GrupoAtl { get; set; }
     }
     
-    public class Futebol : Modalidade
-    {
-        private NivelModalidade _nivel;
-        public NivelModalidade NivelFutebol //o futebol apenas possui o nível T1 -adequação
-        {
-            get { return _nivel; }
-                
-            set{ _nivel = NivelModalidade.T1Adequacao; }
-        }
-    }
-
-    public class Atletismo : Modalidade
-    {
-        public NivelModalidade NivelAtletismo { get; set; }
-        public GruposAtletismo Grupo { get; set; }
-    }
-
-    public class AtletismoIntegrado : Modalidade
-    {
-    }
     
     public enum NivelModalidade
     {

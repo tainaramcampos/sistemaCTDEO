@@ -1,5 +1,5 @@
 ﻿$(function () {
-    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="tooltip"]').tooltip(); //inicializa o balão de dicas
 });
 
 //oculta ou mostra campos de acordo com a classificação da instituição (pública ou privada)
@@ -46,3 +46,13 @@ function InputToUpper(obj) {
         obj.value = obj.value.toUpperCase();
     }
 }
+
+$(function () {
+    $("#nivelMod").hide();
+    $("#grupo").hide();
+    $(document).on('change', '#modalidade', function () {
+        if ($('#modalidade').val() == 1) {
+            $("#nivelMod").show();
+            $("#grupo").show();
+    });
+})

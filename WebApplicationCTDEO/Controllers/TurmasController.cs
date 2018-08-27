@@ -37,6 +37,14 @@ namespace WebApplicationCTDEO.Controllers
             return View(turma);
         }
 
+        // GET: Turmas/Cadastrar
+        [HttpGet]
+        public ActionResult Cadastrar()
+        {
+            ViewData["Dias"] = new SelectList(db.Dias, "Id", "Nomes");
+            return View();
+        }
+
         // GET: Turmas/Create
         public ActionResult Create()
         {

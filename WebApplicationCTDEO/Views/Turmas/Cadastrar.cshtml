@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Cadastrar";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    Html.RenderPartial("Create");
+    Html.RenderPartial("ListModalidades", new List<WebApplicationCTDEO.Models.Modalidade>());
+    //Html.RenderPartial("CreateFamiliar", new WebApplicationCTDEO.Models.Familiar());
+    <div class="form-group">
+        <div class="col-md-10">
+            <input type="submit" value="Cadastrar" onclick="confirmarSalvamento(event);" class="btn btn-default" />
+        </div>
+    </div>
+    <div class="form-group col-md-10">
+        <div>
+            @Html.ActionLink("Lista de turmas", "Index")
+        </div>
+    </div>
+}
