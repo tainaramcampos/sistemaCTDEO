@@ -9,8 +9,8 @@ namespace WebApplicationCTDEO.Models
     {
         public int ModalidadeId { get; set; }
         public string Nome { get; set; }
-        public NivelModalidade Nivel { get; set; }
-        public GruposAtletismo GrupoAtl { get; set; }
+        public NivelModalidade? Nivel { get; set; }
+        public GruposAtletismo? GrupoAtl { get; set; }
     }
     
     

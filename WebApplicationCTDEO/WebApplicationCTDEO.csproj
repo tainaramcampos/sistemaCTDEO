@@ -192,7 +192,7 @@
     <Content Include="Scripts\sb-admin-datatables.min.js" />
     <Content Include="Scripts\sb-admin.js" />
     <Content Include="Scripts\sb-admin.min.js" />
-    <Content Include="Scripts\Turma.js" />
+    <Content Include="Scripts\Turmas.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -351,12 +351,55 @@
     <Compile Include="Migrations\201808262223222_adicionando_dias_da_semana_turma.Designer.cs">
       <DependentUpon>201808262223222_adicionando_dias_da_semana_turma.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808272353210_deixando_valores_de_Modalidade_anulaveis.cs" />
+    <Compile Include="Migrations\201808272353210_deixando_valores_de_Modalidade_anulaveis.Designer.cs">
+      <DependentUpon>201808272353210_deixando_valores_de_Modalidade_anulaveis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808290142124_Modificacoes_em_modalidade_e_turma.cs" />
+    <Compile Include="Migrations\201808290142124_Modificacoes_em_modalidade_e_turma.Designer.cs">
+      <DependentUpon>201808290142124_Modificacoes_em_modalidade_e_turma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808290205343_Modificacoes_em_modalidade_e_turma1.cs" />
+    <Compile Include="Migrations\201808290205343_Modificacoes_em_modalidade_e_turma1.Designer.cs">
+      <DependentUpon>201808290205343_Modificacoes_em_modalidade_e_turma1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808290222278_Modificacoes_em_modalidade_e_turma2.cs" />
+    <Compile Include="Migrations\201808290222278_Modificacoes_em_modalidade_e_turma2.Designer.cs">
+      <DependentUpon>201808290222278_Modificacoes_em_modalidade_e_turma2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808292338115_adicionando_dias_da_semaana_em_turma.cs" />
+    <Compile Include="Migrations\201808292338115_adicionando_dias_da_semaana_em_turma.Designer.cs">
+      <DependentUpon>201808292338115_adicionando_dias_da_semaana_em_turma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808292347149_adicao_de_colunas_de_dias.cs" />
+    <Compile Include="Migrations\201808292347149_adicao_de_colunas_de_dias.Designer.cs">
+      <DependentUpon>201808292347149_adicao_de_colunas_de_dias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808292349272_adicionando_dias_da_semaana_em_turma1.cs" />
+    <Compile Include="Migrations\201808292349272_adicionando_dias_da_semaana_em_turma1.Designer.cs">
+      <DependentUpon>201808292349272_adicionando_dias_da_semaana_em_turma1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808292352006_adicionando_dias_da_semaana_em_turma2.cs" />
+    <Compile Include="Migrations\201808292352006_adicionando_dias_da_semaana_em_turma2.Designer.cs">
+      <DependentUpon>201808292352006_adicionando_dias_da_semaana_em_turma2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808292353332_deletando_coluna_dias.cs" />
+    <Compile Include="Migrations\201808292353332_deletando_coluna_dias.Designer.cs">
+      <DependentUpon>201808292353332_deletando_coluna_dias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808292354297_adicionando_dias_string.cs" />
+    <Compile Include="Migrations\201808292354297_adicionando_dias_string.Designer.cs">
+      <DependentUpon>201808292354297_adicionando_dias_string.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808300005262_hora_para_string.cs" />
+    <Compile Include="Migrations\201808300005262_hora_para_string.Designer.cs">
+      <DependentUpon>201808300005262_hora_para_string.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Familiar.cs" />
     <Compile Include="Models\Modalidade.cs" />
     <Compile Include="Models\Turma.cs" />
-    <Compile Include="Models\ViewModelTurma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -381,8 +424,6 @@
     <Content Include="Views\Alunos\CreatePerfilSocial.cshtml" />
     <Content Include="Views\Alunos\IndexAlunos.cshtml" />
     <Content Include="Views\Turmas\View.cshtml" />
-    <Content Include="Views\Turmas\ListModalidades.cshtml" />
-    <Content Include="Views\Turmas\Cadastrar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -503,6 +544,39 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808262223222_adicionando_dias_da_semana_turma.resx">
       <DependentUpon>201808262223222_adicionando_dias_da_semana_turma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808272353210_deixando_valores_de_Modalidade_anulaveis.resx">
+      <DependentUpon>201808272353210_deixando_valores_de_Modalidade_anulaveis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808290142124_Modificacoes_em_modalidade_e_turma.resx">
+      <DependentUpon>201808290142124_Modificacoes_em_modalidade_e_turma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808290205343_Modificacoes_em_modalidade_e_turma1.resx">
+      <DependentUpon>201808290205343_Modificacoes_em_modalidade_e_turma1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808290222278_Modificacoes_em_modalidade_e_turma2.resx">
+      <DependentUpon>201808290222278_Modificacoes_em_modalidade_e_turma2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808292338115_adicionando_dias_da_semaana_em_turma.resx">
+      <DependentUpon>201808292338115_adicionando_dias_da_semaana_em_turma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808292347149_adicao_de_colunas_de_dias.resx">
+      <DependentUpon>201808292347149_adicao_de_colunas_de_dias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808292349272_adicionando_dias_da_semaana_em_turma1.resx">
+      <DependentUpon>201808292349272_adicionando_dias_da_semaana_em_turma1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808292352006_adicionando_dias_da_semaana_em_turma2.resx">
+      <DependentUpon>201808292352006_adicionando_dias_da_semaana_em_turma2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808292353332_deletando_coluna_dias.resx">
+      <DependentUpon>201808292353332_deletando_coluna_dias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808292354297_adicionando_dias_string.resx">
+      <DependentUpon>201808292354297_adicionando_dias_string.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808300005262_hora_para_string.resx">
+      <DependentUpon>201808300005262_hora_para_string.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

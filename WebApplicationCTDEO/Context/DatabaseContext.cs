@@ -44,7 +44,6 @@ namespace WebApplicationCTDEO.Context
         public DbSet<AlunoSocial> AlunoSocial { get; set; }
         public DbSet<Turma> Turmas { get; set; }
         public DbSet<Modalidade> Modalidade { get; set; }
-        public DbSet<DiadaSemana> Dias { get; set; }
 
     }
 }

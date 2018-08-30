@@ -36,20 +36,14 @@ namespace WebApplicationCTDEO.Controllers
             }
             return View(turma);
         }
-
-        // GET: Turmas/Cadastrar
-        [HttpGet]
-        public ActionResult Cadastrar()
-        {
-            ViewData["Dias"] = new SelectList(db.Dias, "Id", "Nomes");
-            return View();
-        }
+        
 
         // GET: Turmas/Create
         public ActionResult Create()
         {
-            ViewData["ModalidadeId"] = new SelectList(db.Modalidade, "ModalidadeId", "Nome");
-            return View();
+            Turma turma = new Turma();
+            ViewData["Modalidades"] = db.Modalidade.ToList();
+            return View(turma);
         }
 
         // POST: Turmas/Create
@@ -57,10 +51,14 @@ namespace WebApplicationCTDEO.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TurmaId,Nome,ModalidadeId,Dias,Horario")] Turma turma)
+        public ActionResult Create([Bind(Include = "TurmaId,Nome,ModalidadeId,Turno,Horario,ListadeDias")] Turma turma)
         {
+            turma.Dias = string.Join(",", turma.ListadeDias.ToArray()); //adicionando lista de strings numa string única
+            
+            ViewData["Modalidades"] = db.Modalidade.ToList();
             if (ModelState.IsValid)
             {
+               // turma.Dias.ToString();
                 db.Turmas.Add(turma);
                 db.SaveChanges();
                 return RedirectToAction("Index");
