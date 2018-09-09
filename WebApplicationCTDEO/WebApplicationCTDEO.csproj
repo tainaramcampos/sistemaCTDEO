@@ -175,6 +175,7 @@
     <Content Include="Content\vendor\jquery\jquery.min.map" />
     <Content Include="Content\vendor\jquery\jquery.slim.min.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Aluno.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\CustomScripts.js" />
@@ -395,6 +396,26 @@
     <Compile Include="Migrations\201808300005262_hora_para_string.Designer.cs">
       <DependentUpon>201808300005262_hora_para_string.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809011526346_modificacao_temporario_de_atributoturma_em_aluno.cs" />
+    <Compile Include="Migrations\201809011526346_modificacao_temporario_de_atributoturma_em_aluno.Designer.cs">
+      <DependentUpon>201809011526346_modificacao_temporario_de_atributoturma_em_aluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809011534096_modificacao_temporario_de_atributoturma_em_aluno1.cs" />
+    <Compile Include="Migrations\201809011534096_modificacao_temporario_de_atributoturma_em_aluno1.Designer.cs">
+      <DependentUpon>201809011534096_modificacao_temporario_de_atributoturma_em_aluno1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809040012591_nao_mapear_id_de_turma.cs" />
+    <Compile Include="Migrations\201809040012591_nao_mapear_id_de_turma.Designer.cs">
+      <DependentUpon>201809040012591_nao_mapear_id_de_turma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809091350452_edicao_de_campos_alunos.cs" />
+    <Compile Include="Migrations\201809091350452_edicao_de_campos_alunos.Designer.cs">
+      <DependentUpon>201809091350452_edicao_de_campos_alunos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809091353263_edicao_de_campos_alunos1.cs" />
+    <Compile Include="Migrations\201809091353263_edicao_de_campos_alunos1.Designer.cs">
+      <DependentUpon>201809091353263_edicao_de_campos_alunos1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Familiar.cs" />
@@ -577,6 +598,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808300005262_hora_para_string.resx">
       <DependentUpon>201808300005262_hora_para_string.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809011526346_modificacao_temporario_de_atributoturma_em_aluno.resx">
+      <DependentUpon>201809011526346_modificacao_temporario_de_atributoturma_em_aluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809011534096_modificacao_temporario_de_atributoturma_em_aluno1.resx">
+      <DependentUpon>201809011534096_modificacao_temporario_de_atributoturma_em_aluno1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809040012591_nao_mapear_id_de_turma.resx">
+      <DependentUpon>201809040012591_nao_mapear_id_de_turma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809091350452_edicao_de_campos_alunos.resx">
+      <DependentUpon>201809091350452_edicao_de_campos_alunos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809091353263_edicao_de_campos_alunos1.resx">
+      <DependentUpon>201809091353263_edicao_de_campos_alunos1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

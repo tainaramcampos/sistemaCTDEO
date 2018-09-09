@@ -29,6 +29,9 @@ namespace WebApplicationCTDEO.Models
 
         public virtual ICollection<Turma> Turmas { get; set; }
 
+        [NotMapped]
+        public string IdsdeTurmas { get; set; }
+
         public string CPF { get; set; }
 
         public string RG { get; set; }

@@ -204,11 +204,52 @@
 </div>
 
 <div class="form-group col-md-10">
-    @Html.LabelFor(model => model.Turmas, "Turmas", htmlAttributes: new { @class = "control-label" })
-    @Html.DropDownList("Turmas", null, htmlAttributes: new { @class = "form-control" })
-    @Html.ValidationMessageFor(model => model.Turmas, "", new { @class = "text-danger" })
+    <!--Escolha de modalidade-->
+    @{ var turmas = (List<WebApplicationCTDEO.Models.Turma>)ViewData["Turmas"]; }
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => turmas.First().Nome)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => turmas.First().Modalidade.Nome)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => turmas.First().Dias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => turmas.First().Horario)
+            </th>
+        </tr>
+
+        @foreach (var item in turmas)
+        {
+            <tr id="@item.TurmaId">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modalidade.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dias)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Horario)
+                </td>
+            </tr>
+        }
+
+    </table>
 </div>
 
-<!--onclick="window.location.href = '@Url.Action("Create", "Modalidades")';"-->
-<button type="button" class="fa fa-plus btn btn-outline-info btn-lg" data-toggle="tooltip" data-placement="bottom" title="Cadastrar nova modalidade"></button>
+<div>
+    @Html.EditorFor(model => model.IdsdeTurmas, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="~/Scripts/Aluno.js"></script>
 
+<!--onclick="window.location.href = '@Url.Action("Create", "Modalidades")';"-->
+<!--<button type="button" class="fa fa-plus btn btn-outline-info btn-lg" data-toggle="tooltip" data-placement="bottom" title="Cadastrar nova modalidade"></button>-->

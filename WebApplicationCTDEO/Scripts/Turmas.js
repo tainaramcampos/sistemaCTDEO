@@ -4,5 +4,5 @@
         $(this).parent().attr('class', 'bg-secondary text-light');
         $('#ModalidadeId').val($(this).parent().attr('id'));
     });
-
 });
+

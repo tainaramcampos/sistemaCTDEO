@@ -54,5 +54,6 @@ $(function () {
         if ($('#modalidade').val() == 1) {
             $("#nivelMod").show();
             $("#grupo").show();
+        }
     });
-})
+});

@@ -16,18 +16,18 @@ namespace WebApplicationCTDEO.Context
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            //adicionando a relação entre aluno e turma
-            /*modelBuilder.Entity<Aluno>()
-            .HasMany(c => c.Turmas)
+            // customizando os campos da relação entre aluno e turma
+            modelBuilder.Entity<Aluno>()
+            .HasMany<Turma>(c => c.Turmas)
             .WithMany(c => c.Alunos)
             .Map(a => {
                 a.ToTable("AlocacaoAluno");
                 a.MapLeftKey("AlunoId");
-                a.MapRightKey("Turma_Id");
+                a.MapRightKey("TurmaId");
             });
-            //relação entre aluno e familiar
+            /*//relação entre aluno e familiar
             modelBuilder.Entity<Aluno>()
-           .HasMany(c => c.Familiar)
+           .HasMany<Familiar>(c => c.Familiar)
            .WithMany(c => c.Alunos)
            .Map(a => {
                a.ToTable("Aluno_Familiar");

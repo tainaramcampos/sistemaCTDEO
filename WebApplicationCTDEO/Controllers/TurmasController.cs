@@ -58,7 +58,6 @@ namespace WebApplicationCTDEO.Controllers
             ViewData["Modalidades"] = db.Modalidade.ToList();
             if (ModelState.IsValid)
             {
-               // turma.Dias.ToString();
                 db.Turmas.Add(turma);
                 db.SaveChanges();
                 return RedirectToAction("Index");

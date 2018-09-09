@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -36,39 +38,72 @@ namespace WebApplicationCTDEO.Controllers
         [HttpGet]
         public ActionResult Cadastrar()
         {
-            ViewData["Turmas"] = new SelectList(db.Turmas, "TurmaId", "Nome");
+            ViewData["Turmas"] = db.Turmas.ToList();
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Cadastrar([Bind(Include = "AlunoId,Nome,Genero,DatadeNascimento,Procedencia,CPF,RG,OrgaoExp,DatadeExp,Endereco,Numero,Complemento,Bairro,Municipio,Comunidade,CEP,TelefoneResidencial,Celular,InstituicaodeEnsino,RededeEnsino,CRE,BolsadeEstudos,TipodeInstituicao,Serie,Turno,Transporte,RegistroFed,TipodeBolsaAtleta")] Aluno aluno,
+        public ActionResult Cadastrar([Bind(Include = "AlunoId,Nome,Genero,DatadeNascimento,Procedencia,CPF,RG,OrgaoExp,DatadeExp,Endereco,Numero,Complemento,Bairro,Municipio,Comunidade,CEP,TelefoneResidencial,Celular,InstituicaodeEnsino,RededeEnsino,CRE,BolsadeEstudos,TipodeInstituicao,Serie,Turno,Transporte,RegistroFed,TipodeBolsaAtleta, IdsdeTurmas")] Aluno aluno,
             [Bind(Include = "AlunoId,PaisSeparados,NMoraComPais,JustificativaNMoraCPais,Sustento,TrabalhadoresNaFamilia,RendaMensal,TipodeBeneficio,Residencia,QtasCriancasEstudando,Fumantes,Alcoolismo,EnvolvidocomDrogas,ComoConheceu,OutroProjetoqParticipa")] AlunoSocial alunoSocial
            /* [Bind(Include = "CPF,Nome,Profissao,GraudeParentesco, IsResponsavel")] Familiar familiar*/)
-        {
 
-            ViewData["Turmas"] = new SelectList(db.Turmas, "TurmaId", "Nome");
+        {
+            ViewData["Turmas"] = db.Turmas.ToList();
+            Turma turmaModel = new Turma();
+
             if (ModelState.IsValid)
             {
-                db.Alunos.Add(aluno);
-                db.AlunoSocial.Add(alunoSocial);
-                //db.Familiar.Add(familiar);
-                db.SaveChanges();
+               
+                    //lista para receber os códigos de turmas selecionadas
+                    List<string> stringTurmas = new List<string>();
+                    stringTurmas = aluno.IdsdeTurmas.Split(',').ToList(); //adiciona a string de ids de turmas numa lista
+                    stringTurmas.Remove(""); //remove os itens em branco
+
+                    using (var context = new DatabaseContext())
+                    {
+                    if (aluno.IdsdeTurmas != "") //se tiver alguma turma na lista, salvar na tabela
+                    {
+                        foreach (var item in stringTurmas) 
+                        {
+                            int id = Int32.Parse(item); //convertendo os ids de string pra int
+
+                            //resagatando as turmas existentes
+                            var turma = context.Turmas.Include("Alunos")
+                            .Where(s => s.TurmaId == id).FirstOrDefault<Turma>();
+
+                            //attach
+                            if (context.Entry(turma).State == EntityState.Detached)
+                                context.Turmas.Attach(turma);
+
+                            //adicionando na lista de alunos
+                            aluno.Turmas.Add(turma);
+                        }
+                    }
+
+                    context.Alunos.Add(aluno);
+                    context.AlunoSocial.Add(alunoSocial);
+                    //salvar familiar
+                    context.SaveChanges();
+                    }
+                
                 return RedirectToAction("IndexAlunos");
             }
             return View(aluno);
         }
+
 
         public PartialViewResult CreateStudent()
         {
             return PartialView();
         }
 
+
         public PartialViewResult CreateFamiliar()
         {
             return PartialView();
         }
-        
+
 
         // POST: Alunos/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
