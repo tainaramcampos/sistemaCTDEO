@@ -12,13 +12,16 @@ namespace WebApplicationCTDEO.Models
         [Required(ErrorMessage = "Este campo é obrigatório")]
         public string Nome { get; set; }
 
+        [Display(Name = "Gênero")]
         [Required(ErrorMessage = "Este campo é obrigatório")]
         public Sexo? Genero { get; set; }
 
+        [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date)]
         [Required(ErrorMessage = "Este campo é obrigatório")]
         public DateTime DatadeNascimento { get; set; }
 
+        [Display(Name = "Procedência")]
         public string Procedencia { get; set; }
 
         public Aluno()
@@ -36,14 +39,18 @@ namespace WebApplicationCTDEO.Models
 
         public string RG { get; set; }
 
+        [Display(Name = "Órgão Expedidor")]
         public string OrgaoExp { get; set; }
 
+        [Display(Name = "Data da Expedição")]
         [DataType(DataType.Date)]
         public DateTime? DatadeExp { get; set; }
 
+        [Display(Name = "Endereço")]
         [Required(ErrorMessage = "Este campo é obrigatório")]
         public string Endereco { get; set; }
-        
+
+        [Display(Name = "Número")]
         public int Numero { get; set; }
 
         public string Complemento { get; set; }
@@ -51,6 +58,7 @@ namespace WebApplicationCTDEO.Models
         [Required(ErrorMessage = "Este campo é obrigatório")]
         public string Bairro { get; set; }
 
+        [Display(Name = "Município")]
         public string Municipio { get; set; }
 
         public string Comunidade { get; set; }
@@ -58,6 +66,7 @@ namespace WebApplicationCTDEO.Models
         [Required(ErrorMessage = "Este campo é obrigatório")]
         public string CEP { get; set; }
 
+        [Display(Name = "Telefone Residencial")]
         [DataType(DataType.PhoneNumber)]
         public string TelefoneResidencial { get; set; }
 
@@ -67,24 +76,32 @@ namespace WebApplicationCTDEO.Models
 
         public virtual ICollection<Familiar> Familiar { get; set; }
 
+        [Display(Name = "Instituição de Ensino")]
         public string InstituicaodeEnsino { get; set; }
 
+        [Display(Name = "Rede de Ensino")]
         public Instituicao? RededeEnsino { get; set; }
 
+        [Display(Name = "Região Administrativa")]
         public string RegiaoAdministrativa { get; set; }
 
+        [Display(Name = "Bolsa de Estudos")]
         public bool BolsadeEstudos { get; set; }
 
+        [Display(Name = "Sistema de Ensino")]
         public TipodeInst? SistemadeEnsino { get; set; }
 
+        [Display(Name = "Sério")]
         public Nivel? Serie { get; set; }
 
         public HorariodeEstudo? Turno { get; set; }
 
         public TipodeTransporte? Transporte { get; set; }
 
+        [Display(Name = "Registro da Federação")]
         public string RegistroFed { get; set; }
 
+        [Display(Name = "Tipo de Bolsa")]
         public TipodeBolsa? TipodeBolsaAtleta { get; set; }
     }
 
