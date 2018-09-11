@@ -416,6 +416,14 @@
     <Compile Include="Migrations\201809091353263_edicao_de_campos_alunos1.Designer.cs">
       <DependentUpon>201809091353263_edicao_de_campos_alunos1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809092243529_modificacao_de_nivel.cs" />
+    <Compile Include="Migrations\201809092243529_modificacao_de_nivel.Designer.cs">
+      <DependentUpon>201809092243529_modificacao_de_nivel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809092244230_modificacao_de_nivel1.cs" />
+    <Compile Include="Migrations\201809092244230_modificacao_de_nivel1.Designer.cs">
+      <DependentUpon>201809092244230_modificacao_de_nivel1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Familiar.cs" />
@@ -613,6 +621,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809091353263_edicao_de_campos_alunos1.resx">
       <DependentUpon>201809091353263_edicao_de_campos_alunos1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809092243529_modificacao_de_nivel.resx">
+      <DependentUpon>201809092243529_modificacao_de_nivel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809092244230_modificacao_de_nivel1.resx">
+      <DependentUpon>201809092244230_modificacao_de_nivel1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
