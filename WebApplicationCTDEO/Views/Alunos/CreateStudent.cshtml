@@ -203,35 +203,42 @@
     </div>
 </div>
 
+
+<h4 class="col-md-10 text-center">Escolha de turma para o aluno (opcional)</h4>
 <div class="form-group col-md-10">
     <!--Escolha de modalidade-->
-    @{ var turmas = (List<WebApplicationCTDEO.Models.Turma>)ViewData["Turmas"]; }
+    @{ var turmas = (List<WebApplicationCTDEO.Models.Turma>)ViewData["Turmas"]; 
+        var modalidades = (List<WebApplicationCTDEO.Models.Modalidade>)ViewData["Modalidades"]; }
+        }
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => turmas.First().Nome)
+                Código da turma
             </th>
 
             <th>
-                @Html.DisplayNameFor(model => turmas.First().Modalidade.Nome)
+                Modalidade
             </th>
 
             <th>
-                @Html.DisplayNameFor(model => turmas.First().Dias)
+                Dias da Semana
             </th>
             <th>
-                @Html.DisplayNameFor(model => turmas.First().Horario)
+                Horário
             </th>
         </tr>
 
         @foreach (var item in turmas)
         {
+            var modturma = modalidades.Where(m => m.ModalidadeId == item.ModalidadeId).Select(m => m.Nome).ToList().FirstOrDefault().ToString();
+            
+          
             <tr id="@item.TurmaId">
                 <td>
                     @Html.DisplayFor(modelItem => item.Nome)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Modalidade.Nome)
+                    @modturma
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Dias)

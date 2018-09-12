@@ -4,29 +4,68 @@
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4>Cadastro de Turma</h4>
-    <hr />
+    <div class="form-horizontal">
+        <h4>Cadastro de Turma</h4>
+        <hr />
 
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <!--Cadastro de turma-->
-    <div class="form-group col-md-10">
-        <div class="row">
-            <div class="col-4">
-                @Html.LabelFor(model => model.Turno, "Turno", htmlAttributes: new { @class = "control-label" })
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <!--Cadastro de turma-->
+        <div class="form-group col-md-10">
+            <div class="row">
+                <div class="col-6">
+                    @Html.LabelFor(model => model.Turno, "Turno", htmlAttributes: new { @class = "control-label" })
 
-                @Html.EnumDropDownListFor(model => model.Turno, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Turno, "", new { @class = "text-danger" })
-            </div>
+                    @Html.EnumDropDownListFor(model => model.Turno, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Turno, "", new { @class = "text-danger" })
+                </div>
 
-            <div class="col-4">
-                @Html.LabelFor(model => model.Horario, "Horário", htmlAttributes: new { @class = "control-label" })
+                <div class="col-6">
+                    @Html.LabelFor(model => model.Horario, "Horário", htmlAttributes: new { @class = "control-label" })
 
-                @Html.EditorFor(model => model.Horario, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Horario, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.Horario, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Horario, "", new { @class = "text-danger" })
+                </div>
             </div>
         </div>
-    </div>
+
+            <!--Escolha de modalidade-->
+            <div class="form-group col-md-10">
+                <h5>Modalidade</h5>
+                @{var modalidades = (List<WebApplicationCTDEO.Models.Modalidade>)ViewData["Modalidades"]; }
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => modalidades.First().Nome)
+                        </th>
+
+                        <th>
+                            @Html.DisplayNameFor(model => modalidades.First().Nivel)
+                        </th>
+
+                        <th>
+                            @Html.DisplayNameFor(model => modalidades.First().GrupoAtl)
+                        </th>
+                    </tr>
+
+                    @foreach (var item in modalidades)
+                    {
+                        <tr id="@item.ModalidadeId">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nome)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nivel)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GrupoAtl)
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+
+        
         <div class="form-group col-md-10">
             <div class="row">
                 <div class="col-6">
@@ -43,60 +82,24 @@
                     @Html.EditorFor(model => model.ModalidadeId, new { htmlAttributes = new { @class = "form-control" } })
                 </div>
             </div>
-            </div>
+        </div>
 
     </div>
 
-    <!--Escolha de modalidade-->
-<div class="form-group col-md-10">
-    @{var modalidades = (List<WebApplicationCTDEO.Models.Modalidade>)ViewData["Modalidades"];   }
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => modalidades.First().Nome)
-                </th>
-
-                <th>
-                    @Html.DisplayNameFor(model => modalidades.First().Nivel)
-                </th>
-
-                <th>
-                    @Html.DisplayNameFor(model => modalidades.First().GrupoAtl)
-                </th>
-            </tr>
-
-            @foreach (var item in modalidades)
-            {
-                <tr id="@item.ModalidadeId">
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Nome)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Nivel)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.GrupoAtl)
-                    </td>
-                </tr>
-            }
-
-        </table>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Cadastrar" onclick="confirmarSalvamento(event);" class="btn btn-default" />
+        </div>
     </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Cadastrar" onclick="confirmarSalvamento(event);" class="btn btn-default" />
-            </div>
+    <div class="form-group col-md-10">
+        <div>
+            @Html.ActionLink("Lista de turmas", "Index")
         </div>
+    </div>
 
-        <div class="form-group col-md-10">
-            <div>
-                @Html.ActionLink("Lista de turmas", "Index")
-            </div>
-        </div>
-
-        }
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="~/Scripts/Turmas.js"></script>
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="~/Scripts/Turmas.js"></script>
 
 

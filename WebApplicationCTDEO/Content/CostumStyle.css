@@ -3,6 +3,16 @@
     min-height: 100%;
 }
 
+select {
+    text-align: center;
+    width: 100%;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+option {
+    border: 2px;
+}
+
 #sidebar {
     height: inherit;
     background-color: #343a40;

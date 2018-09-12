@@ -39,6 +39,7 @@ namespace WebApplicationCTDEO.Controllers
         public ActionResult Cadastrar()
         {
             ViewData["Turmas"] = db.Turmas.ToList();
+            ViewData["Modalidades"] = db.Modalidade.ToList();
             return View();
         }
 
@@ -54,17 +55,18 @@ namespace WebApplicationCTDEO.Controllers
 
             if (ModelState.IsValid)
             {
-               
+
+                using (var context = new DatabaseContext())
+                {
+                    if (aluno.IdsdeTurmas != null) //se tiver alguma turma na lista, salvar na tabela
+                {
                     //lista para receber os códigos de turmas selecionadas
                     List<string> stringTurmas = new List<string>();
                     stringTurmas = aluno.IdsdeTurmas.Split(',').ToList(); //adiciona a string de ids de turmas numa lista
                     stringTurmas.Remove(""); //remove os itens em branco
 
-                    using (var context = new DatabaseContext())
-                    {
-                    if (aluno.IdsdeTurmas != "") //se tiver alguma turma na lista, salvar na tabela
-                    {
-                        foreach (var item in stringTurmas) 
+
+                        foreach (var item in stringTurmas)
                         {
                             int id = Int32.Parse(item); //convertendo os ids de string pra int
 
@@ -80,15 +82,15 @@ namespace WebApplicationCTDEO.Controllers
                             aluno.Turmas.Add(turma);
                         }
                     }
-
                     context.Alunos.Add(aluno);
                     context.AlunoSocial.Add(alunoSocial);
                     //salvar familiar
                     context.SaveChanges();
                     }
-                
+
                 return RedirectToAction("IndexAlunos");
             }
+            
             return View(aluno);
         }
 

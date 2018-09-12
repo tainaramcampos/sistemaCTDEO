@@ -32,6 +32,8 @@ namespace WebApplicationCTDEO.Models
 
         public virtual ICollection<Turma> Turmas { get; set; }
 
+
+        [System.Web.Mvc.HiddenInput(DisplayValue = false)]
         [NotMapped]
         public string IdsdeTurmas { get; set; }
 
@@ -51,7 +53,7 @@ namespace WebApplicationCTDEO.Models
         public string Endereco { get; set; }
 
         [Display(Name = "Número")]
-        public int Numero { get; set; }
+        public int? Numero { get; set; }
 
         public string Complemento { get; set; }
 
