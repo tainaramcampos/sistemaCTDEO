@@ -18,9 +18,16 @@
 <div class="form-group col-md-10">
     <div class="row">
         <div class="col-6">
-            @Html.LabelFor(model => model.DatadeNascimento, "Data de nascimento *", htmlAttributes: new { @class = "control-label" })
-            @Html.EditorFor(model => model.DatadeNascimento, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.DatadeNascimento, "", new { @class = "text-danger" })
+            @if (Model.DatadeNascimento.Equals(""))
+            {
+                @Html.LabelFor(model => model.DatadeNascimento, "Data de nascimento *", htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.DatadeNascimento, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DatadeNascimento, "", new { @class = "text-danger" })
+            }
+            else
+            {
+                <input type="text" value="@Model.DatadeNascimento" name="DatadeNascimento" class="form-control"/>
+            }
         </div>
         <div class="col-6">
             @Html.LabelFor(model => model.Genero, "Gênero *", htmlAttributes: new { @class = "control-label" })
@@ -49,9 +56,16 @@
             @Html.ValidationMessageFor(model => model.OrgaoExp, "", new { @class = "text-danger" })
         </div>
         <div class="col-4">
-            @Html.LabelFor(model => model.DatadeExp, "Data de Expedição", htmlAttributes: new { @class = "control-label" })
-            @Html.EditorFor(model => model.DatadeExp, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.DatadeExp, "", new { @class = "text-danger" })
+            @if (Model.DatadeExp.Equals(""))
+            {
+                @Html.LabelFor(model => model.DatadeExp, "Data de Expedição", htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.DatadeExp, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DatadeExp, "", new { @class = "text-danger" })
+            }
+            else
+            {
+                <input type="text" value="@Model.DatadeExp" name="DatadeExp" class="form-control" />
+            }
         </div>
     </div>
 </div>
@@ -207,9 +221,9 @@
 <h4 class="col-md-10 text-center">Escolha de turma para o aluno (opcional)</h4>
 <div class="form-group col-md-10">
     <!--Escolha de modalidade-->
-    @{ var turmas = (List<WebApplicationCTDEO.Models.Turma>)ViewData["Turmas"]; 
+    @{ var turmas = (List<WebApplicationCTDEO.Models.Turma>)ViewData["Turmas"];
         var modalidades = (List<WebApplicationCTDEO.Models.Modalidade>)ViewData["Modalidades"]; }
-        }
+        
     <table class="table">
         <tr>
             <th>
@@ -231,8 +245,8 @@
         @foreach (var item in turmas)
         {
             var modturma = modalidades.Where(m => m.ModalidadeId == item.ModalidadeId).Select(m => m.Nome).ToList().FirstOrDefault().ToString();
-            
-          
+
+
             <tr id="@item.TurmaId">
                 <td>
                     @Html.DisplayFor(modelItem => item.Nome)
@@ -255,6 +269,9 @@
 <div>
     @Html.EditorFor(model => model.IdsdeTurmas, new { htmlAttributes = new { @class = "form-control" } })
 </div>
+
+<input type="text" value="@Model.AlunoId" name="AlunoId" hidden />
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="~/Scripts/Aluno.js"></script>
 
